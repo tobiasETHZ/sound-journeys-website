@@ -247,23 +247,6 @@ textarea.input { resize: vertical; min-height: 120px; }
   margin-top: 32px;
 }
 
-.construction-note {
-  margin-top: 24px;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.construction-link {
-  color: var(--stone);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(237,232,223,0.15);
-}
-
-.construction-link:hover {
-  color: var(--bone);
-  border-bottom-color: rgba(237,232,223,0.35);
-}
-
 .preview-badge {
   position: fixed;
   right: 18px;
