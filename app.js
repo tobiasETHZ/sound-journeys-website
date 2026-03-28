@@ -103,6 +103,38 @@ if (anatomySvg) {
 }
 
 
+// ---- Newsletter Subscribe ----
+async function handleSubscribe(event) {
+  event.preventDefault();
+  const form = event.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const input = form.querySelector('input[type="email"]');
+  const email = input.value.trim();
+
+  btn.disabled = true;
+  btn.textContent = 'Joining…';
+
+  try {
+    const res = await fetch('/.netlify/functions/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+
+    if (res.ok) {
+      btn.textContent = 'Thank you ✓';
+      input.value = '';
+    } else {
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.textContent = 'Try again';
+    btn.disabled = false;
+  }
+}
+
+
 // ---- Smooth anchor clicks ----
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {

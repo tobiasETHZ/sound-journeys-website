@@ -417,7 +417,7 @@
     <p style="font-size:0.88rem; color:var(--stone); margin-bottom:32px; line-height:1.7;">
       We announce new dates, openings, and occasional reflections by email. No spam. Unsubscribe anytime.
     </p>
-    <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thank you ✓'; this.querySelector('button').disabled=true;" style="display:flex; gap:10px; max-width:440px; margin:0 auto;">
+    <form onsubmit="handleSubscribe(event)" style="display:flex; gap:10px; max-width:440px; margin:0 auto;">
       <input type="email" class="input" placeholder="Your email address" required style="flex:1;" />
       <button type="submit" class="btn btn--primary" style="white-space:nowrap;">Join</button>
     </form>
