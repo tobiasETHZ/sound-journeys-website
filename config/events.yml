@@ -1,0 +1,26 @@
+# Events
+#
+# Purpose: Source of truth for all events shown on the site.
+#
+# Edited by: Humans directly, whenever events are added, changed,
+#            or removed.
+#
+# Consumed by: Build process generates event card HTML from this file.
+#              Each event becomes one card in the Upcoming section.
+#
+# Schema per event:
+#   date:         ISO date (YYYY-MM-DD), required
+#   time:         e.g. "20:00 – 23:00", required
+#   title:        required
+#   teaser:       one short sentence, required
+#   intensity:    array of numbers 0–1 describing the arc shape,
+#                 required — used by the mini intensity profile
+#   tags:         2–4 from vocabulary below, required
+#   availability: "available" | "limited" | "sold_out", optional
+#   cta_url:      booking or interest link, optional
+#
+# Tag vocabulary (pick 2–4 per event):
+#   immersive, emotional, gentle, strange, cathartic,
+#   textured, percussive, expansive, intense
+
+events: []

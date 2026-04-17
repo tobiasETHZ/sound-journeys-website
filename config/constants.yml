@@ -1,0 +1,33 @@
+# Constants
+#
+# Purpose: Values used across the site that humans need to edit
+#          quickly without touching code.
+#
+# Edited by: Humans directly.
+#
+# Consumed by: Build process injects these into the generated HTML.
+#
+# Not for: Design values (see tokens.css), event data (see events.yml),
+#          on-site copy (see content/).
+
+project:
+  name: "Sound Journeys"
+  city: "Zurich"
+
+creators:
+  - name: "PA / Baribahl"
+    role: "Music curation, artistic direction"
+  - name: "Tobias"
+    role: "Logistics, space, pricing, operations"
+
+session:
+  listening_duration: "90–120 minutes"
+  total_experience: "2–3 hours including arrival and integration"
+
+contact:
+  email: ""           # TODO
+  waitlist_url: ""    # TODO
+  private_inquiry_url: ""  # TODO — or leave blank to use email
+
+social:
+  # TODO — add handles as they become relevant.~~~~
