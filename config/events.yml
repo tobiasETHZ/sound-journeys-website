@@ -1,0 +1,52 @@
+# Events
+#
+# Purpose: Source of truth for all events shown on the site.
+#
+# Edited by: Humans directly, whenever events are added, changed,
+#            or removed.
+#
+# Consumed by: Build process generates event card HTML from this file.
+#              Each event becomes one card in the Upcoming section.
+#
+# Schema per event:
+#   date:         ISO date (YYYY-MM-DD), required
+#   time:         e.g. "20:00 – 23:00", required
+#   title:        required
+#   teaser:       one short sentence, required
+#   intensity:    array of numbers 0–1 describing the arc shape,
+#                 required — used by the mini intensity profile
+#   tags:         2–4 from vocabulary below, required
+#   availability: "available" | "limited" | "sold_out", optional
+#   cta_url:      booking or interest link, optional
+#
+# Tag vocabulary (pick 2–4 per event):
+#   immersive, emotional, gentle, strange, cathartic,
+#   textured, percussive, expansive, intense
+
+events:
+  - date: "2025-07-26"
+    time: "19:30 – 22:30"
+    title: "Nocturne I"
+    teaser: "A slow-burning arc through layered ambient textures, building toward a single sustained peak — then dissolving into silence."
+    intensity: [0.0, 0.08, 0.22, 0.45, 0.70, 0.88, 1.0, 0.85, 0.60, 0.30, 0.10, 0.02]
+    tags: [immersive, emotional, expansive]
+    availability: available
+    cta_url: "#loop"
+
+  - date: "2025-08-16"
+    time: "20:00 – 23:00"
+    title: "Undertow"
+    teaser: "Two waves. A restless build through percussive movement and cathartic release, then a second, stranger tide pulling you somewhere unexpected."
+    intensity: [0.0, 0.12, 0.38, 0.68, 0.80, 0.55, 0.30, 0.50, 0.85, 1.0, 0.70, 0.35, 0.10]
+    tags: [intense, percussive, strange]
+    availability: limited
+    cta_url: "#loop"
+
+  - date: "2025-09-12"
+    time: "19:00 – 22:00"
+    title: "Still Life"
+    teaser: "A gentler arc. Luminous, slow, spacious — for those drawn to sustained beauty rather than turbulence. Deceptive depth beneath the calm."
+    intensity: [0.0, 0.12, 0.32, 0.55, 0.78, 0.95, 1.0, 0.90, 0.70, 0.40, 0.18, 0.05]
+    tags: [gentle, textured, emotional]
+    availability: available
+    cta_url: "#loop"

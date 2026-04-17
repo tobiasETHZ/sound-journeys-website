@@ -1,0 +1,36 @@
+# Constants
+#
+# Purpose: Values used across the site that humans need to edit
+#          quickly without touching code.
+#
+# Edited by: Humans directly.
+#
+# Consumed by: Build process injects these into the generated HTML.
+#
+# Not for: Design values (see tokens.css), event data (see events.yml),
+#          on-site copy (see content/).
+
+project:
+  name: "Sound Journeys"
+  city: "Zurich"
+  copyright_year: 2026
+
+creators:
+  - name: "PA / Baribahl"
+    role: "Music curation, artistic direction"
+  - name: "Tobias"
+    role: "Logistics, space, pricing, operations"
+
+session:
+  listening_duration: "90–120 minutes"
+  total_experience: "2–3 hours including arrival and integration"
+
+contact:
+  email: "info@soundjourneys.ch"
+
+newsletter:
+  # The "Stay in the loop" form posts here; Netlify function forwards to Brevo.
+  endpoint: "/.netlify/functions/subscribe"
+
+social:
+  # TODO — add handles as they become relevant.
