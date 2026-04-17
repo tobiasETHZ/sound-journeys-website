@@ -1,7 +1,7 @@
 # Home
 
 **Purpose:** Actual copy for the homepage. Source of truth — the site
-renders this content. Edit here, not in the generated HTML.
+renders this content.
 
 **Edited by:** Humans, when copy changes.
 
@@ -73,8 +73,8 @@ Spaciousness returns. The body softens. Silence arrives. A gentle re-entry — i
 ### Arc diagram labels
 ARRIVAL · DEEPENING · WAVES / PEAKS · RELEASE
 
-### Expanded anatomy copy (optional, revealed on interaction)
-TODO
+<!-- ### Expanded anatomy copy (optional, revealed on interaction)
+TODO -->
 
 ## Upcoming journeys
 

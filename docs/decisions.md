@@ -12,18 +12,6 @@ supersede them.
 
 ---
 
-## 2025 — Framing: not therapy, not sound design
-
-**Decision:** The project is framed as artistic and curatorial, never
-as therapy, healing, coaching, spiritual instruction, sound design,
-live processing, or field-recording performance.
-
-**Reasoning:** Therapeutic effects may occur but are side effects,
-not the product. The project's integrity and audience depend on
-artistic framing. Earlier prototype content that described sub-bass
-emphasis, field recordings, or live processing was inaccurate and
-has been removed.
-
 ## 2025 — Public journeys before private bookings
 
 **Decision:** The homepage and CTAs prioritize public Sound Journeys.

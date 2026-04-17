@@ -5,8 +5,7 @@ page), section order, responsive requirements, editability
 constraints, and detailed rules for recurring UI components.
 
 **Edited by:** Humans, when site structure or component behavior
-changes. Not for design principles (see `design-tokens.md`) or copy
-(see `content/`).
+changes.
 
 ---
 
