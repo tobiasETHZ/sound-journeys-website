@@ -1,4 +1,4 @@
-PROJECT: Build the Sound Journeys website — unified brief + mandatory prototype pass
+   PROJECT: Build the Sound Journeys website — unified brief + mandatory prototype pass
 
 IMPORTANT WORKING MODE
 
