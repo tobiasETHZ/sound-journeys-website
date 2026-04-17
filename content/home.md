@@ -1,9 +1,9 @@
 # Home
 
-**Purpose:** Actual copy for the homepage. Source of truth — the site
+**Purpose:** Actual content for the homepage. Source of truth — the site
 renders this content.
 
-**Edited by:** Humans, when copy changes.
+**Edited by:** Humans, when content changes.
 
 ---
 
