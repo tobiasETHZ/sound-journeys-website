@@ -1,8 +1,8 @@
 # Structure
 
-**Purpose:** Defines the site's pages, section order, responsive
-requirements, editability constraints, and detailed rules for
-recurring UI components.
+**Purpose:** Defines the site's shape (currently a single scrolling
+page), section order, responsive requirements, editability
+constraints, and detailed rules for recurring UI components.
 
 **Edited by:** Humans, when site structure or component behavior
 changes. Not for design principles (see `design-tokens.md`) or copy
@@ -10,31 +10,37 @@ changes. Not for design principles (see `design-tokens.md`) or copy
 
 ---
 
-## Pages
+## Site shape
 
-Primary:
-1. Home
-2. Journeys / Upcoming
-3. About
-4. Private Bookings / Contact
+The site is a **single scrollable page**. Every section below is a
+named anchor on that one page — there are no separate routed pages in
+v1. Keeping it mono-page is intentional: the experience is meant to be
+read as one arc, mirroring the shape of a Sound Journey itself.
 
-Optional (deferred):
-5. FAQ / What to Expect
-6. Reflections / Reviews (placeholder or hidden)
-7. Archive / Past Journeys (future)
+A temporary `/` "coming soon" landing currently fronts the real site,
+which lives at `/preview/`. This is scaffolding, not architecture —
+when the site goes public, the preview content becomes `/`.
 
-Navigation stays compact. The homepage carries most of the richness.
+Deferred (not on the page today):
+- FAQ — folded into **What to Expect** for now.
+- Reflections / Reviews — see `decisions.md`, a public review wall is
+  out of scope at launch.
+- Archive / Past Journeys — future.
 
-## Homepage section order
+## Section order (top to bottom)
 
-A. Hero
-B. Introduction to the concept
-C. Anatomy of a Sound Journey
-D. Upcoming journeys
-E. What to expect / Entering the journey
-F. About us
-G. Private bookings
-H. Stay in the loop / contact
+| # | Section                 | Anchor      | Nav label          |
+|---|-------------------------|-------------|--------------------|
+| A | Hero                    | (top)       | — (wordmark)       |
+| B | Introduction / Concept  | `#concept`  | About              |
+| C | Anatomy of a Journey    | `#anatomy`  | The Arc            |
+| D | Upcoming journeys       | `#upcoming` | Journeys           |
+| E | What to expect          | `#expect`   | What to Expect     |
+| F | About us                | `#about`    | —                  |
+| G | Private bookings        | `#private`  | Private            |
+| H | Stay in the loop        | `#loop`     | Stay in the Loop * |
+
+\* Rendered as a primary-button link in the nav, not a plain text link.
 
 ## Section purposes
 
@@ -151,10 +157,16 @@ simple ramp.
 
 ### Two layers
 
-1. **Top-level arc** — simple, legible, three phases:
-   - Arrival / Grounding
-   - Deepening / Tension / Exploration
-   - Peak / Release / Return
+1. **Top-level arc** — simple, legible, four phases rendered as cards
+   beneath a signature wave diagram:
+   - Arrival (○)
+   - Deepening (◐)
+   - Waves & Peaks (●)
+   - Release (◌)
+
+   The four-card layout separates the "Waves & Peaks" crest from the
+   "Release" descent, so the wave-based structure (see decisions.md)
+   is legible at a glance without needing the expanded view.
 
 2. **Expanded anatomy** — optional deeper layer, revealed on
    interaction (hover, click, or expand). May include:

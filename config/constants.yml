@@ -13,6 +13,7 @@
 project:
   name: "Sound Journeys"
   city: "Zurich"
+  copyright_year: 2025
 
 creators:
   - name: "PA / Baribahl"
@@ -25,9 +26,13 @@ session:
   total_experience: "2–3 hours including arrival and integration"
 
 contact:
-  email: ""           # TODO
-  waitlist_url: ""    # TODO
-  private_inquiry_url: ""  # TODO — or leave blank to use email
+  email: "tobias@soundjourneys.ch"
+  waitlist_url: ""            # Newsletter handled via Netlify function; no external waitlist URL.
+  private_inquiry_url: ""     # Leave blank — private inquiry uses mailto:contact.email.
+
+newsletter:
+  # The "Stay in the loop" form posts here; Netlify function forwards to Brevo.
+  endpoint: "/.netlify/functions/subscribe"
 
 social:
-  # TODO — add handles as they become relevant.~~~~
+  # TODO — add handles as they become relevant.
