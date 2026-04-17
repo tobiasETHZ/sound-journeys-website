@@ -9,6 +9,7 @@ A curated immersive listening experience project in Zurich. Read
 
 - `netlify/` — netlify functions that can be called from source code
 - `docs/identity.md` — what the project is and how it should feel
+- `docs/design-tokens.md` — design system vocabulary and principles
 - `docs/structure.md` — pages, sections, and component rules
 - `docs/decisions.md` — log of past choices (append-only)
 - `config/constants.yml` — URLs, contact, session duration
