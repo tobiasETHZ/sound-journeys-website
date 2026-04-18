@@ -26,9 +26,9 @@ The real site lives in the `preview/` subfolder.
 |---|-------------------------|-------------|--------------------|
 | A | Hero                    | (top)       | — (wordmark)       |
 | B | Introduction / Concept  | `#concept`  | About              |
-| C | Anatomy of a Journey    | `#anatomy`  | The Arc            |
-| D | Upcoming journeys       | `#upcoming` | Journeys           |
-| E | What to expect          | `#expect`   | What to Expect     |
+| C | What to expect          | `#expect`   | What to Expect     |
+| D | Anatomy of a Journey    | `#anatomy`  | The Arc            |
+| E | Upcoming journeys       | `#upcoming` | Journeys           |
 | F | About us                | `#about`    | —                  |
 | G | Private bookings        | `#private`  | Private Bookings   |
 | H | Stay in the loop        | `#loop`     | Stay in the Loop * |
@@ -48,17 +48,21 @@ atmospheric background. Poetic above the fold.
 Explains what a Sound Journey is and what makes the approach
 distinct. Includes a compact "not this / not that" clarification.
 
+### What to expect / Entering the journey
+Bridges artistic framing and practical clarity. Communicates
+duration, posture, autonomy, and container ethics. Calm and
+trust-building, never clinical. Sits early in the page so visitors
+understand the practical shape of a journey before meeting its
+emotional anatomy.
+
 ### Anatomy of a Sound Journey
 Key section. Describes the shape of a journey. See component rules
 below.
 
 ### Upcoming journeys
-Event cards for upcoming events. 
-
-### What to expect / Entering the journey
-Bridges artistic framing and practical clarity. Communicates
-duration, posture, autonomy, and container ethics. Calm and
-trust-building, never clinical.
+Event cards for upcoming events. While only one journey is scheduled
+the section shows a single, more prominent featured card rather than
+a grid; additional cards drop in beside it as the calendar fills.
 
 ### About us
 Short project statement, two compact role-led profiles, one sentence
@@ -69,7 +73,11 @@ Secondary to public journeys. Short framing text plus inquiry CTA or
 contact path.
 
 ### Stay in the loop
-Mailing list signup. Email primary. Elegant, not growth-hacky.
+Channel for announcements of new journeys. Telegram is the primary
+channel: a prominent button links to `@soundjourneys`
+(`https://t.me/soundjourneys`). An email subscription form sits
+underneath as the secondary option for visitors who prefer email.
+Elegant, never growth-hacky.
 
 ## CTA priority
 
@@ -97,16 +105,24 @@ dashboard row.
 - Title
 - Date and time
 - Short teaser line
-- Signature mini intensity profile (see below)
+- A single numeric intensity indicator (e.g. `2 / 5`), shown as a
+  small 5-dot meter. One calm glance, not a dashboard.
 - 2–4 tags, selectively chosen
 - Optional availability signal (available / limited / sold out)
-- CTA or interest/book button
+- CTA — either a "Register interest" link back to the mailing list
+  or a direct booking link to the external ticketing page
+  (e.g. Eventfrog) when tickets are live
 
-### Mini intensity profile
+The card intentionally has no per-event intensity *graph*: the
+top-level Anatomy diagram carries the arc language for the whole
+site. A single dot-meter is acceptable as a quick at-a-glance cue.
 
-A small visual graph suggesting the emotional and sonic shape of the
-journey. Hero feature of the card — refine it, do not discard it.
-Should suggest an arc, not a single peak.
+### Featured variant
+
+When only one journey is upcoming, the card renders slightly larger
+(`event-card--featured`): roomier padding, a display-scale title,
+body-scale teaser. It lives in a narrower, centred column so it
+reads as a single featured event rather than a lonely grid item.
 
 ### What to avoid
 
@@ -114,6 +130,9 @@ Should suggest an arc, not a single peak.
 - Listing all curation dimensions (intensity, weirdness,
   aggressiveness, softness) as visible badges — these are internal
   tools, not UI
+- Per-event mini intensity *graphs* (the old waveform thumbnails) —
+  removed; the shared Anatomy diagram is the site's single arc
+  visualisation. A small numeric intensity meter is fine.
 
 
 ---

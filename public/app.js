@@ -4,7 +4,7 @@
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let stars = [];
-  const COUNT = 140;
+  const COUNT = 210;
 
   function resize() {
     canvas.width = window.innerWidth;
