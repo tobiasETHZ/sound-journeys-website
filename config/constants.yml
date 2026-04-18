@@ -1,14 +1,10 @@
 # Constants
 #
-# Purpose: Values used across the site that humans need to edit
-#          quickly without touching code.
+# Purpose: Values used across the site. Used to seed the original website generation.
 #
 # Edited by: Humans directly.
-#
-# Consumed by: Build process injects these into the generated HTML.
-#
-# Not for: Design values (see tokens.css), event data (see events.yml),
-#          on-site copy (see content/).
+
+
 
 project:
   name: "Sound Journeys"
@@ -19,7 +15,7 @@ creators:
   - name: "PA / Baribahl"
     role: "Music curation, artistic direction"
   - name: "Tobias"
-    role: "Logistics, space, pricing, operations"
+    role: "Logistics, space & production"
 
 session:
   listening_duration: "90–120 minutes"

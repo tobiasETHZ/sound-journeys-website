@@ -16,15 +16,9 @@ named anchor on that one page — there are no separate routed pages in
 v1. Keeping it mono-page is intentional: the experience is meant to be
 read as one arc, mirroring the shape of a Sound Journey itself.
 
-A temporary `/` "coming soon" landing currently fronts the real site,
-which lives at `/preview/`. This is scaffolding, not architecture —
-when the site goes public, the preview content becomes `/`.
+A temporary "coming soon" landing currently fronts the real site,
+The real site lives in the `preview/` subfolder.
 
-Deferred (not on the page today):
-- FAQ — folded into **What to Expect** for now.
-- Reflections / Reviews — see `decisions.md`, a public review wall is
-  out of scope at launch.
-- Archive / Past Journeys — future.
 
 ## Section order (top to bottom)
 
@@ -36,15 +30,14 @@ Deferred (not on the page today):
 | D | Upcoming journeys       | `#upcoming` | Journeys           |
 | E | What to expect          | `#expect`   | What to Expect     |
 | F | About us                | `#about`    | —                  |
-| G | Private bookings        | `#private`  | Private            |
+| G | Private bookings        | `#private`  | Private Bookings   |
 | H | Stay in the loop        | `#loop`     | Stay in the Loop * |
 
 \* Rendered as a primary-button link in the nav, not a plain text link.
 
 ## Section purposes
 
-Each section's actual copy lives in `content/home.md`. This file
-describes only what each section is *for*.
+This file  describes only what each section is *for*. The actual content was added manually.
 
 ### Hero
 Sets the atmospheric tone and communicates the core offering.
@@ -60,8 +53,7 @@ Key section. Describes the shape of a journey. See component rules
 below.
 
 ### Upcoming journeys
-Event cards sourced from `config/events.yml`. See component rules
-below.
+Event cards for upcoming events. 
 
 ### What to expect / Entering the journey
 Bridges artistic framing and practical clarity. Communicates
@@ -93,12 +85,6 @@ Mobile-first. The atmospheric design must survive on smaller
 screens. Cards, anatomy graphics, and typography must remain readable
 and elegant below 375px width.
 
-## Editability
-
-Static or manually updated is fine for v1. No heavy CMS. Events live
-in `config/events.yml` and are consumed at build time to generate
-event card HTML.
-
 ---
 
 ## Component: Event card
@@ -122,12 +108,6 @@ A small visual graph suggesting the emotional and sonic shape of the
 journey. Hero feature of the card — refine it, do not discard it.
 Should suggest an arc, not a single peak.
 
-### Tag rules
-
-- 2–4 tags per card, maximum
-- Pick from the tag vocabulary commented in `config/events.yml`
-- Selective and expressive, not exhaustive metadata
-
 ### What to avoid
 
 - Turning the card into a dashboard with many metrics
@@ -135,12 +115,6 @@ Should suggest an arc, not a single peak.
   aggressiveness, softness) as visible badges — these are internal
   tools, not UI
 
-### Internal curation dimensions
-
-The team may think about journeys along multiple dimensions:
-emotional intensity, weirdness / experimentalness, aggressiveness /
-impact, softness / spaciousness. These inform curation and tag
-choice. They do not appear as UI.
 
 ---
 
@@ -167,7 +141,7 @@ simple ramp.
    "Release" descent, so the wave-based structure (see decisions.md)
    is legible at a glance without needing the expanded view.
 
-2. **Expanded anatomy** — optional deeper layer, revealed on
+2. **Expanded anatomy** — IGNORE THIS FOR NOW - optional deeper layer, revealed on
    interaction (hover, click, or expand). May include:
    - Arriving / settling / orientation
    - Grounding / attunement / soft opening
