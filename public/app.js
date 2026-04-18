@@ -128,15 +128,37 @@ if (anatomySvg) {
 
 
 // ---- Newsletter Subscribe ----
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 async function handleSubscribe(event) {
   event.preventDefault();
   const form = event.target;
   const btn = form.querySelector('button[type="submit"]');
   const input = form.querySelector('input[type="email"]');
+  const status = form.parentElement.querySelector('.loop__status');
   const email = input.value.trim();
 
+  const setStatus = (tone, message) => {
+    if (!status) return;
+    status.textContent = message;
+    status.dataset.tone = tone;
+  };
+
+  if (!email) {
+    setStatus('error', 'Please enter your email address.');
+    input.focus();
+    return;
+  }
+  if (!EMAIL_RE.test(email)) {
+    setStatus('error', "That doesn't look like a valid email address.");
+    input.focus();
+    return;
+  }
+
+  const originalLabel = btn.textContent;
   btn.disabled = true;
   btn.textContent = 'Joining…';
+  setStatus('pending', '');
 
   try {
     const res = await fetch('/.netlify/functions/subscribe', {
@@ -145,16 +167,28 @@ async function handleSubscribe(event) {
       body: JSON.stringify({ email }),
     });
 
+    let data = {};
+    try { data = await res.json(); } catch { /* ignore */ }
+
     if (res.ok) {
-      btn.textContent = 'Thank you ✓';
+      btn.textContent = 'Subscribed ✓';
       input.value = '';
-    } else {
-      btn.textContent = 'Try again';
-      btn.disabled = false;
+      setStatus(
+        'success',
+        data.message === 'Already subscribed'
+          ? "You're already on the list — thanks!"
+          : "You're on the list. Talk soon."
+      );
+      return;
     }
-  } catch {
-    btn.textContent = 'Try again';
+
     btn.disabled = false;
+    btn.textContent = originalLabel;
+    setStatus('error', data.error || "Something went wrong. Please try again.");
+  } catch {
+    btn.disabled = false;
+    btn.textContent = originalLabel;
+    setStatus('error', "Network error. Please check your connection and try again.");
   }
 }
 

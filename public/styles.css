@@ -492,8 +492,11 @@ textarea.input { resize: vertical; min-height: 120px; }
 
 .concept__intro {
   max-width: var(--content-max-reading);
-  margin: 0 auto var(--space-section-header);
+  margin: 0 auto var(--space-stack-xl);
   text-align: center;
+}
+#concept .expect-list {
+  margin-bottom: var(--space-section-header);
 }
 .concept__p {
   font-size: var(--font-size-body);
@@ -512,7 +515,7 @@ textarea.input { resize: vertical; min-height: 120px; }
 .concept__aside-text {
   font-size: var(--font-size-body);
   line-height: var(--line-height-relaxed);
-  color: var(--color-text-heading);
+  color: var(--color-text-body);
   letter-spacing: var(--tracking-tightish);
 }
 
@@ -1047,6 +1050,17 @@ textarea.input { resize: vertical; min-height: 120px; }
   margin: 0 auto;
   transition: opacity var(--motion-fast);
 }
+.loop__status {
+  min-height: 1.25em;
+  margin: var(--space-stack-md) auto 0;
+  max-width: var(--content-max-narrow);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-body);
+  color: var(--color-text-muted);
+  transition: color var(--motion-fast);
+}
+.loop__status[data-tone="success"] { color: var(--color-accent-success); }
+.loop__status[data-tone="error"]   { color: var(--color-accent-warm); }
 
 /* =========================================================================
    Footer

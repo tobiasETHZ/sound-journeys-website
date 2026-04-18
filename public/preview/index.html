@@ -27,7 +27,7 @@
     <li><a href="#concept">Concept</a></li>
     <li><a href="#anatomy">The Arc</a></li>
     <li><a href="#upcoming">Journeys</a></li>
-    <li><a href="#about">Artists</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#loop" class="btn btn--small btn--primary">Stay in the Loop</a></li>
   </ul>
   <div class="nav-burger" id="burger" onclick="toggleMenu()">
@@ -39,7 +39,7 @@
   <a href="#concept" onclick="closeMenu()">Concept</a>
   <a href="#anatomy" onclick="closeMenu()">The Arc</a>
   <a href="#upcoming" onclick="closeMenu()">Journeys</a>
-  <a href="#about" onclick="closeMenu()">Artists</a>
+  <a href="#about" onclick="closeMenu()">About</a>
   <a href="#loop" onclick="closeMenu()">Stay in the Loop</a>
 </div>
 
@@ -91,7 +91,7 @@
 
   <div class="reveal reveal-d1 concept__intro">
     <p class="concept__p concept__p--last">
-      A Sound Journey is a carefully shaped listening experience — usually 90 to 120 minutes of continuous music, played through a high-quality system in a cozy space. You lie down, listen, and follow an arc that has been composed with intention.
+      A Sound Journey is a carefully shaped listening experience — continuous music played through a high-quality system in an intimate space, following an arc composed with intention.
     </p>
   </div>
 
@@ -145,8 +145,6 @@
     </div>
   </div>
 
-  <div class="divider divider--concept reveal reveal-d2"></div>
-
   <div class="reveal reveal-d3 concept__aside">
     <p class="concept__aside-text">
       Not a concert. Not therapy. Not a guided meditation.<br />
@@ -164,7 +162,7 @@
       Not a Straight Line.<br />A Shaped Arc.
     </h2>
     <p class="section-intro">
-      A Sound Journey is not one steady build from calm to climax. It moves in waves — attention gathers, contrast opens, intensity rises and turns, and the landing is given time. The exact route changes from one journey to another, but the logic is always shaped with intention<a href="#anatomy-note" class="anatomy__asterisk" aria-describedby="anatomy-note">*</a>.
+      A Sound Journey is not one steady build from calm to climax. It moves in waves — attention gathers, contrast opens, intensity rises and turns, and the landing is given time. The exact route changes from one journey to another, but the logic is always shaped with intention.
     </p>
   </div>
 
@@ -211,7 +209,7 @@
       <circle class="anatomy-halo" data-phase="01" cx="100" cy="215" r="36" fill="url(#haloArrival)"/>
       <circle class="anatomy-halo" data-phase="02" cx="330" cy="105" r="40" fill="url(#haloDeepening)"/>
       <circle class="anatomy-halo" data-phase="03" cx="600" cy="45"  r="52" fill="url(#haloPeaks)"/>
-      <circle class="anatomy-halo" data-phase="04" cx="800" cy="185" r="42" fill="url(#haloLanding)"/>
+      <circle class="anatomy-halo" data-phase="04" cx="800" cy="191" r="42" fill="url(#haloLanding)"/>
 
       <!-- Fill -->
       <path class="anatomy-fill-path" d="M50,220 C120,218 150,200 200,180 C250,158 280,130 330,105 C370,84 400,65 440,50 C470,40 500,55 530,75 C550,88 570,65 600,45 C630,30 660,55 690,90 C720,120 750,155 790,185 C820,205 840,218 850,220 Z" fill="url(#fillGrad)"/>
@@ -272,8 +270,8 @@
     </div>
   </div>
 
-  <p id="anatomy-note" class="reveal reveal-d6 anatomy__disclaimer">
-    <span class="anatomy__disclaimer-mark">*</span> This is a general map, not a fixed recipe — each journey has its own profile and personality, sometimes a single long wave, sometimes several.
+  <p class="reveal reveal-d6 anatomy__disclaimer">
+    This is a general map, not a fixed recipe — each journey has its own profile and personality, sometimes a single long wave, sometimes several.
   </p>
 </section>
 
@@ -402,10 +400,11 @@
 
     <p class="loop__or"><span class="loop__or-line"></span><span class="loop__or-text">or stay updated by email</span><span class="loop__or-line"></span></p>
 
-    <form class="loop__form" onsubmit="handleSubscribe(event)">
+    <form class="loop__form" onsubmit="handleSubscribe(event)" novalidate>
       <input type="email" class="input input--flex-fill" placeholder="Your email address" required />
       <button type="submit" class="btn btn--ghost btn--submit">Stay Updated</button>
     </form>
+    <p class="loop__status" role="status" aria-live="polite"></p>
   </div>
 </section>
 
