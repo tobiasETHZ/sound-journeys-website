@@ -67,18 +67,18 @@
   --unit-9:  120px;
 
   /* ---------- Type scale (6 steps + 4 responsive displays) ------------ */
-  --size-1: 0.7rem;
-  --size-2: 0.82rem;
-  --size-3: 0.95rem;
-  --size-4: 1.1rem;
-  --size-5: 1.3rem;
-  --size-6: 1.5rem;
+  --size-1: 0.82rem;
+  --size-2: 0.95rem;
+  --size-3: 1.12rem;
+  --size-4: 1.3rem;
+  --size-5: 1.55rem;
+  --size-6: 1.8rem;
 
-  --size-display-1: clamp(1.6rem, 3.5vw, 2.2rem);
-  --size-display-2: clamp(1.8rem, 4vw,   2.6rem);
-  --size-display-3: clamp(2.6rem, 6vw,   4.4rem);
-  --size-display-4: clamp(3rem,   8vw,   5.2rem);
-  --size-display-mobile: clamp(2.5rem, 14vw, 4rem);
+  --size-display-1: clamp(1.9rem, 4vw,   2.6rem);
+  --size-display-2: clamp(2.1rem, 4.8vw, 3.1rem);
+  --size-display-3: clamp(3rem,   6.8vw, 5rem);
+  --size-display-4: clamp(3.4rem, 9vw,   5.8rem);
+  --size-display-mobile: clamp(2.8rem, 15vw, 4.4rem);
 
   /* ---------- Font families -------------------------------------------- */
   --family-serif: 'Cormorant Garamond', serif;
@@ -166,6 +166,7 @@
   --shadow-input:      0 0 24px rgba(var(--palette-lavender-rgb), 0.05);
   --shadow-dot-success: 0 0 8px rgba(var(--palette-success-rgb),  0.4);
   --shadow-dot-warm:    0 0 8px rgba(var(--palette-gold-rgb),     0.4);
+  --shadow-dot-accent:  0 0 8px rgba(var(--palette-lavender-rgb), 0.35);
 
   /* ---------- Atmospheric glows / dividers ---------------------------- */
   --glow-cool:   radial-gradient(circle,
@@ -187,7 +188,8 @@
   --font-family-body:    var(--family-sans);
 
   /* ---------- Typography — sizes by role ------------------------------ */
-  --font-size-meta:        var(--size-1);  /* eyebrows, metadata, labels */
+  --font-size-meta:        var(--size-1);  /* metadata, tiny labels */
+  --font-size-eyebrow:     calc(var(--size-1) * 1.3);  /* section kickers */
   --font-size-caption:     var(--size-2);  /* buttons, inputs, tags, small body */
   --font-size-body:        var(--size-3);  /* default body copy */
   --font-size-lead:        var(--size-4);  /* hero copy, lead paragraphs */
@@ -246,11 +248,11 @@
   --space-stack-2xl: var(--unit-7);    /* 48 — between major blocks */
 
   /* ---------- Spacing — section / page layout ------------------------- */
-  --space-section-y:      var(--unit-8);  /* 80 */
+  --space-section-y:      var(--unit-9);  /* 120 — vertical rhythm between sections */
   --space-section-x:      var(--unit-5);  /* 24 */
-  --space-section-header: var(--unit-7);  /* 48 — below section header */
+  --space-section-header: var(--unit-8);  /* 80 — below section header */
   --space-hero-top:       var(--unit-9);  /* 120 */
-  --space-hero-bottom:    var(--unit-8);  /* 80  */
+  --space-hero-bottom:    var(--unit-9);  /* 120 */
 
   /* ---------- Spacing — component paddings ---------------------------- */
   --space-card:       var(--unit-6);   /* 32 */
@@ -263,14 +265,14 @@
   --space-btn-x-sm:   var(--unit-4);   /* 16 */
 
   /* ---------- Content max-widths (for text blocks) -------------------- */
-  --content-max-narrow:  480px;  /* tight paragraph: hero copy, card teaser */
-  --content-max-reading: 600px;  /* comfortable paragraph: concept, about */
+  --content-max-narrow:  560px;  /* tight paragraph: hero copy, card teaser */
+  --content-max-reading: 720px;  /* comfortable paragraph: concept, about */
 
   /* ---------- Layout max-widths (for section containers) -------------- */
-  --layout-max-compact: 560px;
-  --layout-max-reading: 720px;
-  --layout-max-prose:   840px;
-  --layout-max-wide:    960px;
+  --layout-max-compact: 720px;
+  --layout-max-reading: 920px;
+  --layout-max-prose:   1080px;
+  --layout-max-wide:    1240px;
 
   /* ---------- Navigation / scroll ------------------------------------- */
   --nav-height:        72px;
@@ -301,8 +303,6 @@
   --opacity-glyph-soft:      0.3;
   --opacity-glyph-medium:    0.5;
   --opacity-glyph-heavy:     0.6;
-  --opacity-intensity:       0.55;
-  --opacity-intensity-hover: 0.85;
 
   /* ---------- Reveal animation --------------------------------------- */
   --reveal-stagger: 0.08s;

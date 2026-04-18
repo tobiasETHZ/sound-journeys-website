@@ -247,17 +247,6 @@ textarea.input { resize: vertical; min-height: 120px; }
   box-shadow: var(--shadow-dot-warm);
 }
 
-/* ---- Intensity SVG --------------------------------------------------- */
-.intensity-svg {
-  display: block;
-  width: 100%;
-  max-width: 220px;
-  opacity: var(--opacity-intensity);
-  transition: opacity var(--motion-fast);
-}
-.intensity-svg--event { max-width: 200px; margin: 0 auto; }
-.card:hover .intensity-svg { opacity: var(--opacity-intensity-hover); }
-
 /* ---- Anatomy Animation ---------------------------------------------- */
 .anatomy-line {
   stroke-dasharray: 2400;
@@ -365,7 +354,7 @@ textarea.input { resize: vertical; min-height: 120px; }
 }
 
 .eyebrow {
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-eyebrow);
   letter-spacing: var(--tracking-eyebrow);
   color: var(--color-accent);
   text-transform: uppercase;
@@ -415,7 +404,7 @@ textarea.input { resize: vertical; min-height: 120px; }
   max-width: var(--layout-max-reading);
 }
 .hero__eyebrow {
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-eyebrow);
   letter-spacing: var(--tracking-eyebrow-lg);
   color: var(--color-text-body);
   margin-bottom: var(--space-inline-2xl);
@@ -536,22 +525,26 @@ textarea.input { resize: vertical; min-height: 120px; }
   gap: var(--space-stack-lg);
   grid-template-columns: 1fr;
 }
+.events--single {
+  max-width: var(--layout-max-reading);
+  margin: 0 auto;
+}
 .event-card {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: var(--space-inline-xl);
-  align-items: start;
+  display: block;
+}
+.event-card--featured {
+  padding: var(--space-card-inset);
 }
 .event-card__meta {
   display: flex;
   align-items: center;
   gap: var(--space-inline-md);
-  margin-bottom: var(--space-inline-md);
+  margin-bottom: var(--space-stack-md);
   flex-wrap: wrap;
 }
 .event-card__date,
 .event-card__time {
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-caption);
   color: var(--color-text-muted);
 }
 .event-card__date {
@@ -559,7 +552,7 @@ textarea.input { resize: vertical; min-height: 120px; }
   text-transform: uppercase;
 }
 .event-card__bullet {
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-caption);
   color: var(--color-text-muted);
 }
 .event-card__title {
@@ -567,33 +560,75 @@ textarea.input { resize: vertical; min-height: 120px; }
   font-weight: var(--font-weight-heading-strong);
   font-size: var(--font-size-heading-lg);
   color: var(--color-text-heading);
-  margin-bottom: var(--space-stack-sm);
+  margin-bottom: var(--space-stack-md);
   line-height: var(--line-height-event);
 }
+.event-card--featured .event-card__title {
+  font-size: var(--font-size-display-sm);
+}
 .event-card__teaser {
-  font-size: var(--font-size-caption);
+  font-size: var(--font-size-body);
   color: var(--color-text-body);
   line-height: var(--line-height-body);
-  margin-bottom: var(--space-stack-md);
-  max-width: var(--content-max-narrow);
+  margin-bottom: var(--space-stack-xl);
+  max-width: var(--content-max-reading);
+}
+.event-card__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-inline-xl);
+  margin-bottom: var(--space-stack-xl);
+}
+.event-card__spec {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-stack-xs);
+}
+.event-card__spec-label {
+  font-size: var(--font-size-meta);
+  letter-spacing: var(--tracking-caps);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+.event-card__spec-value {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-inline-md);
+  font-size: var(--font-size-caption);
+  color: var(--color-text-heading);
 }
 .event-card__tags {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-inline-sm);
-  margin-bottom: var(--space-stack-md);
+  margin-bottom: var(--space-stack-xl);
 }
-.event-card__intensity {
-  min-width: 180px;
-  padding-top: var(--space-stack-sm);
+.event-card__cta {
+  font-size: var(--font-size-body);
 }
-.event-card__intensity-label {
+
+/* Intensity meter — 5 dots, filled dots indicate level */
+.intensity-meter {
+  display: inline-flex;
+  gap: var(--space-inline-xs);
+  align-items: center;
+}
+.intensity-meter__dot {
+  width: var(--unit-2);
+  height: var(--unit-2);
+  border-radius: 50%;
+  background: var(--border-default);
+  border: 1px solid var(--border-strong);
+}
+.intensity-meter__dot--on {
+  background: var(--color-accent);
+  border-color: var(--border-accent-strong);
+  box-shadow: var(--shadow-dot-accent);
+}
+.intensity-meter__text {
   font-size: var(--font-size-meta);
-  letter-spacing: var(--tracking-caps);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  margin-bottom: var(--space-stack-sm);
-  text-align: center;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-body);
 }
 
 /* =========================================================================
@@ -738,6 +773,34 @@ textarea.input { resize: vertical; min-height: 120px; }
   margin-bottom: var(--space-card);
   line-height: var(--line-height-body);
 }
+.loop__primary {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-stack-xl);
+}
+.loop__telegram {
+  font-size: var(--font-size-body);
+  padding: var(--space-input-y) var(--space-card);
+  gap: var(--space-inline-md);
+}
+.loop__telegram-icon {
+  font-size: var(--font-size-heading-sm);
+  line-height: 1;
+  transform: rotate(-15deg);
+  display: inline-block;
+}
+.loop__telegram-handle {
+  color: var(--color-text-body);
+  font-weight: var(--font-weight-body);
+  letter-spacing: var(--tracking-wide);
+}
+.loop__or {
+  font-size: var(--font-size-meta);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-stack-md);
+}
 .loop__form {
   display: flex;
   gap: var(--space-inline-md);
@@ -803,7 +866,7 @@ textarea.input { resize: vertical; min-height: 120px; }
 }
 
 .construction-kicker {
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-eyebrow);
   letter-spacing: var(--tracking-eyebrow-lg);
   text-transform: uppercase;
   color: var(--color-accent);
