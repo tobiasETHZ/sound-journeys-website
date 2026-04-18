@@ -30,5 +30,12 @@ The files used below should generally help understand what we're building.
 
 ## Coding rules
 
-- Never add inline styles. All spacing, typography, and color values
-  must reference tokens from a  `public/src/styles/tokens.css` file. If a necessary token doesn't exist, add it with a semantic name rather than  hardcoding.
+- **No inline styles in HTML.** Every `style="…"` attribute is a bug; move it to a class in `public/styles.css`.
+- **All colour, typography, spacing, radius, and motion values flow from `public/src/styles/tokens.css`.** No raw hex codes, rgba, rem/px font sizes, or pixel paddings in `styles.css` or HTML that carry cross-component design meaning.
+- **`tokens.css` has two layers.** Respect the separation:
+  - **Primitives** — the raw vocabulary: `--palette-*`, `--unit-1..9`, `--size-1..6`, `--size-display-*`, `--radius-*`, `--duration-*`, `--family-*`, `--weight-*`. These define what the site is made of. They are small, opinionated scales.
+  - **Semantic tokens** — design decisions, always expressed in terms of primitives: `--color-text-body`, `--font-size-body`, `--space-section-y`, `--surface-card`, `--border-default`, etc. These define what things mean.
+- **Components reference semantic tokens** (`var(--font-size-body)`, `var(--space-section-y)`), not primitives. Reach for a primitive in a component rule only when the value is truly component-internal and doesn't repeat elsewhere — and prefer adding a semantic token when in doubt.
+- **If a needed token doesn't exist:** add a semantic token in the appropriate section of `tokens.css`, and a primitive underneath it only if no existing primitive fits. Don't hardcode.
+- **Exceptions — raw values are acceptable for:** truly component-internal visual constants that carry no shared design meaning (e.g. the 22×1.5 px dimensions of the nav burger lines, the 480×480 px atmospheric hero orb, a 1px divider height, the 5px scrollbar width). When in doubt, prefer a token.
+- **To iterate on the look:** edit semantic tokens first (e.g. change `--font-size-body`, `--space-section-y`, `--color-accent`, `--font-family-heading`). Touch primitives only for scale-wide changes.
