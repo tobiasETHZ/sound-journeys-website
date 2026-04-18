@@ -85,13 +85,9 @@ if (anatomySvg) {
   const arcObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        // Animate the main line
-        const line = anatomySvg.querySelector('.anatomy-line');
-        if (line) line.classList.add('drawn');
-        // Animate the fill
+        anatomySvg.querySelectorAll('.anatomy-line').forEach(l => l.classList.add('drawn'));
         const fill = anatomySvg.querySelector('.anatomy-fill-path');
         if (fill) fill.classList.add('drawn');
-        // Animate phase cards
         document.querySelectorAll('.anatomy-phase').forEach((card, i) => {
           setTimeout(() => card.classList.add('visible'), 600 + i * 180);
         });
@@ -102,17 +98,67 @@ if (anatomySvg) {
   arcObs.observe(anatomySvg);
 }
 
+// ---- Anatomy phase hover linking (dots ⇄ cards) ----
+(function initAnatomyHoverLink() {
+  const dots = document.querySelectorAll('.anatomy-dot[data-phase]');
+  const cards = document.querySelectorAll('.anatomy-phase[data-phase]');
+  const halos = document.querySelectorAll('.anatomy-halo[data-phase]');
+  if (!dots.length && !cards.length) return;
+
+  const setActive = (phase, isActive) => {
+    if (!phase) return;
+    document
+      .querySelectorAll(`[data-phase="${phase}"]`)
+      .forEach(el => el.classList.toggle('is-active', isActive));
+  };
+
+  const bind = (el) => {
+    const phase = el.getAttribute('data-phase');
+    if (!phase) return;
+    el.addEventListener('mouseenter', () => setActive(phase, true));
+    el.addEventListener('mouseleave', () => setActive(phase, false));
+    el.addEventListener('focusin', () => setActive(phase, true));
+    el.addEventListener('focusout', () => setActive(phase, false));
+  };
+
+  dots.forEach(bind);
+  cards.forEach(bind);
+  halos.forEach(bind);
+})();
+
 
 // ---- Newsletter Subscribe ----
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 async function handleSubscribe(event) {
   event.preventDefault();
   const form = event.target;
   const btn = form.querySelector('button[type="submit"]');
   const input = form.querySelector('input[type="email"]');
+  const status = form.parentElement.querySelector('.loop__status');
   const email = input.value.trim();
 
+  const setStatus = (tone, message) => {
+    if (!status) return;
+    status.textContent = message;
+    status.dataset.tone = tone;
+  };
+
+  if (!email) {
+    setStatus('error', 'Please enter your email address.');
+    input.focus();
+    return;
+  }
+  if (!EMAIL_RE.test(email)) {
+    setStatus('error', "That doesn't look like a valid email address.");
+    input.focus();
+    return;
+  }
+
+  const originalLabel = btn.textContent;
   btn.disabled = true;
   btn.textContent = 'Joining…';
+  setStatus('pending', '');
 
   try {
     const res = await fetch('/.netlify/functions/subscribe', {
@@ -121,16 +167,28 @@ async function handleSubscribe(event) {
       body: JSON.stringify({ email }),
     });
 
+    let data = {};
+    try { data = await res.json(); } catch { /* ignore */ }
+
     if (res.ok) {
-      btn.textContent = 'Thank you ✓';
+      btn.textContent = 'Subscribed ✓';
       input.value = '';
-    } else {
-      btn.textContent = 'Try again';
-      btn.disabled = false;
+      setStatus(
+        'success',
+        data.message === 'Already subscribed'
+          ? "You're already on the list — thanks!"
+          : "You're on the list. Talk soon."
+      );
+      return;
     }
-  } catch {
-    btn.textContent = 'Try again';
+
     btn.disabled = false;
+    btn.textContent = originalLabel;
+    setStatus('error', data.error || "Something went wrong. Please try again.");
+  } catch {
+    btn.disabled = false;
+    btn.textContent = originalLabel;
+    setStatus('error', "Network error. Please check your connection and try again.");
   }
 }
 
