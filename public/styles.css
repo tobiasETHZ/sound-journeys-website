@@ -16,6 +16,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--scroll-padding-top);
+  overflow-x: hidden;
 }
 
 body {
@@ -23,6 +24,7 @@ body {
   background: var(--color-bg);
   color: var(--color-text-heading);
   overflow-x: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: var(--line-height-relaxed);
@@ -96,7 +98,7 @@ body {
 .nav-logo {
   font-family: var(--font-family-body);
   font-weight: var(--font-weight-button);
-  font-size: var(--font-size-caption);
+  font-size: var(--font-size-body);
   letter-spacing: var(--tracking-eyebrow);
   color: var(--color-text-heading);
   text-decoration: none;
@@ -326,6 +328,7 @@ textarea.input { resize: vertical; min-height: 120px; }
   z-index: var(--z-content);
   padding: var(--space-section-y) var(--space-section-x);
   margin: 0 auto;
+  width: 100%;
 }
 .section--compact { max-width: var(--layout-max-compact); }
 .section--reading { max-width: var(--layout-max-reading); }
@@ -341,6 +344,7 @@ textarea.input { resize: vertical; min-height: 120px; }
   padding: var(--space-hero-top) var(--space-section-x) var(--space-hero-bottom);
   text-align: center;
   max-width: none;
+  overflow: hidden;
 }
 
 .section--loop {
@@ -488,7 +492,7 @@ textarea.input { resize: vertical; min-height: 120px; }
 
 .concept__intro {
   max-width: var(--content-max-reading);
-  margin: 0 auto;
+  margin: 0 auto var(--space-section-header);
   text-align: center;
 }
 .concept__p {
@@ -496,6 +500,9 @@ textarea.input { resize: vertical; min-height: 120px; }
   line-height: var(--line-height-airy);
   color: var(--color-text-body);
   margin-bottom: var(--space-stack-xl);
+}
+.concept__p--last {
+  margin-bottom: 0;
 }
 .concept__aside {
   max-width: var(--content-max-reading);
@@ -957,12 +964,19 @@ textarea.input { resize: vertical; min-height: 120px; }
   margin-left: auto;
   margin-right: auto;
 }
+.about__quote--above {
+  margin-top: 0;
+  margin-bottom: var(--space-section-header);
+  padding-top: 0;
+  border-top: none;
+}
 .about__quote-text {
   font-family: var(--font-family-heading);
   font-size: var(--font-size-heading-sm);
   line-height: var(--line-height-heading);
   color: var(--color-text-body);
   letter-spacing: var(--tracking-tightish);
+  font-style: italic;
 }
 
 /* =========================================================================

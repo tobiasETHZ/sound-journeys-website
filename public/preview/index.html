@@ -24,10 +24,10 @@
 <nav class="site-nav" id="nav">
   <a href="#" class="nav-logo">SOUND JOURNEYS</a>
   <ul class="nav-links">
-    <li><a href="#concept">About</a></li>
-    <li><a href="#expect">What to Expect</a></li>
+    <li><a href="#concept">Concept</a></li>
     <li><a href="#anatomy">The Arc</a></li>
     <li><a href="#upcoming">Journeys</a></li>
+    <li><a href="#about">Artists</a></li>
     <li><a href="#loop" class="btn btn--small btn--primary">Stay in the Loop</a></li>
   </ul>
   <div class="nav-burger" id="burger" onclick="toggleMenu()">
@@ -36,10 +36,10 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#concept" onclick="closeMenu()">About</a>
-  <a href="#expect" onclick="closeMenu()">What to Expect</a>
+  <a href="#concept" onclick="closeMenu()">Concept</a>
   <a href="#anatomy" onclick="closeMenu()">The Arc</a>
   <a href="#upcoming" onclick="closeMenu()">Journeys</a>
+  <a href="#about" onclick="closeMenu()">Artists</a>
   <a href="#loop" onclick="closeMenu()">Stay in the Loop</a>
 </div>
 
@@ -64,7 +64,7 @@
 
     <div class="hero-animate hero-animate-d4 hero__ctas">
       <a href="#upcoming" class="btn btn--primary">See Upcoming Journeys</a>
-      <a href="#expect" class="btn btn--ghost">What to Expect</a>
+      <a href="#concept" class="btn btn--ghost">Our Concept</a>
     </div>
   </div>
 
@@ -83,44 +83,21 @@
 <!-- ============ CONCEPT ============ -->
 <section id="concept" class="section section--prose">
   <div class="reveal section-header">
-    <p class="eyebrow">The Concept</p>
+    <p class="eyebrow">Our Concept</p>
     <h2 class="section-title">
       Deep Listening,<br class="hidden sm:inline" /> Carefully Composed
     </h2>
   </div>
 
   <div class="reveal reveal-d1 concept__intro">
-    <p class="concept__p">
+    <p class="concept__p concept__p--last">
       A Sound Journey is a carefully shaped listening experience — usually 90 to 120 minutes of continuous music, played through a high-quality system in a cozy space. You lie down, listen, and follow an arc that has been composed with intention.
     </p>
-    <p class="concept__p concept__p--last">
-      Each journey unfolds differently, but the logic is consistent: arrival, deepening, contrast, intensity, release, and a gradual return. The music, the room, and the sequencing work together to create an inward-facing experience that can be subtle, stirring, or surprisingly intense.
-    </p>
   </div>
 
-  <div class="divider divider--concept reveal reveal-d2"></div>
-
-  <div class="reveal reveal-d3 concept__aside">
-    <p class="concept__aside-text">
-      Not a concert. Not therapy. Not a guided meditation.<br />
-      A carefully held listening container with atmosphere, contrast, and a distinctly artistic arc.
-    </p>
-  </div>
-</section>
-
-
-<!-- ============ WHAT TO EXPECT ============ -->
-<section id="expect" class="section section--prose">
-  <div class="reveal section-header">
-    <p class="eyebrow">What to Expect</p>
-    <h2 class="section-title">
-      Entering the Journey
-    </h2>
-  </div>
-
-  <div class="expect-list">
+  <div id="expect" class="expect-list">
     <div class="expect-item reveal reveal-d1">
-      <span class="expect-item__icon" aria-hidden="true">🛏</span>
+      <span class="expect-item__icon" aria-hidden="true">☁️</span>
       <div class="expect-item__body">
         <h4 class="expect-item__title">Lie Down and Listen</h4>
         <p class="expect-item__copy">Most journeys happen with everyone resting on mattresses, cushions, and blankets in a carefully prepared room. The body stays still so attention can go inward.</p>
@@ -128,7 +105,7 @@
     </div>
 
     <div class="expect-item reveal reveal-d2">
-      <span class="expect-item__icon" aria-hidden="true">⏱</span>
+      <span class="expect-item__icon" aria-hidden="true">⏳</span>
       <div class="expect-item__body">
         <h4 class="expect-item__title">90 to 120 Minutes</h4>
         <p class="expect-item__copy">The music is played as one continuous arc, usually followed by a short silent integration moment before people head back into the world.</p>
@@ -136,7 +113,7 @@
     </div>
 
     <div class="expect-item reveal reveal-d3">
-      <span class="expect-item__icon" aria-hidden="true">🕯</span>
+      <span class="expect-item__icon" aria-hidden="true">🫴</span>
       <div class="expect-item__body">
         <h4 class="expect-item__title">Held, Not Guided</h4>
         <p class="expect-item__copy">There is no spoken guidance once the journey begins. No instructions, no performance, no pressure to respond in any particular way.</p>
@@ -144,7 +121,7 @@
     </div>
 
     <div class="expect-item reveal reveal-d4">
-      <span class="expect-item__icon" aria-hidden="true">🤝</span>
+      <span class="expect-item__icon" aria-hidden="true">🫶</span>
       <div class="expect-item__body">
         <h4 class="expect-item__title">Your Autonomy Stays With You</h4>
         <p class="expect-item__copy">You can adjust your position, open your eyes, step out for a moment, or simply listen quietly. You are always free to regulate your own experience.</p>
@@ -160,12 +137,21 @@
     </div>
 
     <div class="expect-item reveal reveal-d6">
-      <span class="expect-item__icon" aria-hidden="true">📵</span>
+      <span class="expect-item__icon" aria-hidden="true">😌</span>
       <div class="expect-item__body">
         <h4 class="expect-item__title">Phones Away, Attention On</h4>
         <p class="expect-item__copy">The space works best when distractions drop away. We ask people to arrive settled, silence their phones, and give the journey their full attention.</p>
       </div>
     </div>
+  </div>
+
+  <div class="divider divider--concept reveal reveal-d2"></div>
+
+  <div class="reveal reveal-d3 concept__aside">
+    <p class="concept__aside-text">
+      Not a concert. Not therapy. Not a guided meditation.<br />
+      A carefully held listening container with atmosphere, contrast, and a distinctly artistic arc.
+    </p>
   </div>
 </section>
 
@@ -225,7 +211,7 @@
       <circle class="anatomy-halo" data-phase="01" cx="100" cy="215" r="36" fill="url(#haloArrival)"/>
       <circle class="anatomy-halo" data-phase="02" cx="330" cy="105" r="40" fill="url(#haloDeepening)"/>
       <circle class="anatomy-halo" data-phase="03" cx="600" cy="45"  r="52" fill="url(#haloPeaks)"/>
-      <circle class="anatomy-halo" data-phase="04" cx="800" cy="198" r="42" fill="url(#haloLanding)"/>
+      <circle class="anatomy-halo" data-phase="04" cx="800" cy="185" r="42" fill="url(#haloLanding)"/>
 
       <!-- Fill -->
       <path class="anatomy-fill-path" d="M50,220 C120,218 150,200 200,180 C250,158 280,130 330,105 C370,84 400,65 440,50 C470,40 500,55 530,75 C550,88 570,65 600,45 C630,30 660,55 690,90 C720,120 750,155 790,185 C820,205 840,218 850,220 Z" fill="url(#fillGrad)"/>
@@ -250,8 +236,8 @@
         <circle class="anatomy-dot__core" cx="600" cy="45" r="4.5" fill="#c4a46c"/>
       </g>
       <g class="anatomy-dot" data-phase="04">
-        <circle class="anatomy-dot__hit" cx="800" cy="198" r="18" fill="transparent"/>
-        <circle class="anatomy-dot__core" cx="800" cy="198" r="4" fill="#c98b6a"/>
+        <circle class="anatomy-dot__hit" cx="800" cy="193" r="18" fill="transparent"/>
+        <circle class="anatomy-dot__core" cx="800" cy="193" r="4" fill="#c98b6a"/>
       </g>
 
       <!-- Phase labels -->
@@ -360,9 +346,9 @@
     </h2>
   </div>
 
-  <div class="reveal reveal-d1 about__body">
-    <p class="about__body-copy">
-      Sound Journeys is made by two people. PA is the artist — the one choosing the music, shaping the arc, and playing each journey from behind the decks. Tobias sits beside that work: a close sounding-board for the programming, and the one holding the space, the logistics, and the details around it. Most decisions are talked through together.
+  <div class="reveal reveal-d1 about__quote about__quote--above">
+    <p class="about__quote-text">
+      Two people, one project — held between them.
     </p>
   </div>
 
@@ -374,7 +360,7 @@
       <h4 class="team-card__name">PA / Baribahl</h4>
       <p class="team-card__role">Artist and musical direction</p>
       <p class="team-card__bio">
-        PA is the artist behind Sound Journeys. He selects the music, sequences the arc, and plays every journey from behind the decks. Each evening's direction — its shape, tone, and intent — is his.
+        PA is the artist behind Sound Journeys. He selects the music, sequences the arc, and plays every journey from behind the decks. He shapes the journey's overall direction.
       </p>
     </div>
     <div class="card team-card reveal reveal-d3">
@@ -384,15 +370,9 @@
       <h4 class="team-card__name">Tobias</h4>
       <p class="team-card__role team-card__role--cool">Space, logistics, and artistic sounding-board</p>
       <p class="team-card__bio">
-        Tobias shapes everything around the music: the room, the setup, the flow of the evening, the website, and the small details that help people arrive and settle. He is also a close thinking partner on programming and atmosphere.
+        Tobias focuses on everything around the music: the room, the setup, the flow of the evening, the website. He is also a close thinking partner on artistic direction.
       </p>
     </div>
-  </div>
-
-  <div class="reveal reveal-d4 about__quote">
-    <p class="about__quote-text">
-      Two people, one project — held between them.
-    </p>
   </div>
 </section>
 
