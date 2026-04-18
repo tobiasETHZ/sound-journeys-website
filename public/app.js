@@ -85,10 +85,13 @@ if (anatomySvg) {
   const arcObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        anatomySvg.querySelectorAll('.anatomy-line').forEach(l => l.classList.add('drawn'));
+        // Animate the main line
+        const line = anatomySvg.querySelector('.anatomy-line');
+        if (line) line.classList.add('drawn');
+        // Animate the fill
         const fill = anatomySvg.querySelector('.anatomy-fill-path');
         if (fill) fill.classList.add('drawn');
-        anatomySvg.querySelectorAll('.anatomy-halo').forEach(h => h.classList.add('visible'));
+        // Animate phase cards
         document.querySelectorAll('.anatomy-phase').forEach((card, i) => {
           setTimeout(() => card.classList.add('visible'), 600 + i * 180);
         });
