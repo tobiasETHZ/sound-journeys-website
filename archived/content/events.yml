@@ -4,9 +4,7 @@
 #
 # Edited by: Humans directly, whenever events are added, changed,
 #            or removed.
-#
-# Consumed by: Build process generates event card HTML from this file.
-#              Each event becomes one card in the Upcoming section.
+
 #
 # Schema per event:
 #   date:         ISO date (YYYY-MM-DD), required

@@ -4,9 +4,7 @@
 technical choices, with the reasoning behind each. Prevents future
 sessions from unknowingly reversing deliberate decisions.
 
-**Edited by:** Humans and AI, whenever a non-trivial choice is made.
-Append-only — don't rewrite past entries, add new ones that
-supersede them.
+**Edited by:** Humans, whenever a non-trivial choice is made.
 
 **Format:** Date, short title, decision, reasoning.
 
@@ -40,12 +38,3 @@ build-peak-descent shape.
 flattens the curatorial depth. The top-level arc stays simple
 (arrival, deepening, release) but the expanded view reveals the
 real complexity.
-
-## 2025 — Manual events, no CMS
-
-**Decision:** Events live in `config/events.yml` and are consumed at
-build time. No CMS or event engine in v1.
-
-**Reasoning:** The site has few events and two collaborators. A CMS
-adds maintenance burden without value. If event management becomes
-painful, revisit.

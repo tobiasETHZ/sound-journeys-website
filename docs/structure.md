@@ -17,14 +17,9 @@ v1. Keeping it mono-page is intentional: the experience is meant to be
 read as one arc, mirroring the shape of a Sound Journey itself.
 
 A temporary `/` "coming soon" landing currently fronts the real site,
-which lives at `/preview/`. This is scaffolding, not architecture —
-when the site goes public, the preview content becomes `/`.
+which lives at `/preview/` within the build folder. This is scaffolding,
+not architecture —  when the site goes public, the preview content becomes `/`.
 
-Deferred (not on the page today):
-- FAQ — folded into **What to Expect** for now.
-- Reflections / Reviews — see `decisions.md`, a public review wall is
-  out of scope at launch.
-- Archive / Past Journeys — future.
 
 ## Section order (top to bottom)
 
@@ -93,12 +88,6 @@ Mobile-first. The atmospheric design must survive on smaller
 screens. Cards, anatomy graphics, and typography must remain readable
 and elegant below 375px width.
 
-## Editability
-
-Static or manually updated is fine for v1. No heavy CMS. Events live
-in `config/events.yml` and are consumed at build time to generate
-event card HTML.
-
 ---
 
 ## Component: Event card
@@ -122,12 +111,6 @@ A small visual graph suggesting the emotional and sonic shape of the
 journey. Hero feature of the card — refine it, do not discard it.
 Should suggest an arc, not a single peak.
 
-### Tag rules
-
-- 2–4 tags per card, maximum
-- Pick from the tag vocabulary commented in `config/events.yml`
-- Selective and expressive, not exhaustive metadata
-
 ### What to avoid
 
 - Turning the card into a dashboard with many metrics
@@ -135,12 +118,6 @@ Should suggest an arc, not a single peak.
   aggressiveness, softness) as visible badges — these are internal
   tools, not UI
 
-### Internal curation dimensions
-
-The team may think about journeys along multiple dimensions:
-emotional intensity, weirdness / experimentalness, aggressiveness /
-impact, softness / spaciousness. These inform curation and tag
-choice. They do not appear as UI.
 
 ---
 

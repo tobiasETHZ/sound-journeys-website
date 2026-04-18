@@ -4,6 +4,7 @@
 the site should give visitors. This is the "why" behind every design and
 copy decision — the emotional and conceptual north star.
 
+**Edited by:** Humans
 
 ## 1. Project overview
 
@@ -184,7 +185,7 @@ The overall system should feel composed like a sequence, not assembled like a ge
 
 ## 12. Logo implications
 
-The eventual logo should be able to:
+We do not use a logo right now. However, the eventual logo should be able to:
 
 - hold tension and intensity without looking aggressive
 - work across calmer and more intense event variants
