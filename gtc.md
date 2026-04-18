@@ -12,7 +12,7 @@ You confirm that you:
 
 * feel physically and mentally able to take part in a 90-minute immersive experience,
 * do not have a history of severe psychiatric conditions (e.g. psychosis),
-* are not تحت the influence of alcohol or psychoactive substances during the event.
+* are not under the influence of alcohol or psychoactive substances during the event.
 
 Participation is voluntary and at your own responsibility.
 
