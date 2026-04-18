@@ -16,9 +16,6 @@ named anchor on that one page — there are no separate routed pages in
 v1. Keeping it mono-page is intentional: the experience is meant to be
 read as one arc, mirroring the shape of a Sound Journey itself.
 
-A temporary "coming soon" landing currently fronts the real site,
-The real site lives in the `preview/` subfolder.
-
 
 ## Section order (top to bottom)
 

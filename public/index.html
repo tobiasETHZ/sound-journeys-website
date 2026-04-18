@@ -3,37 +3,421 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sound Journeys — Coming Soon</title>
-  <meta name="description" content="Sound Journeys is currently under construction. The public website will launch soon." />
-  <meta name="robots" content="noindex, nofollow" />
+  <title>Sound Journeys — Curated Listening Experiences in Zurich</title>
+  <meta name="description" content="A curated listening format in Zurich. Deep listening shaped with care, contrast, and emotional range — immersive, inward-facing, and carefully held." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="coming-soon-body">
-  <canvas id="stars-canvas"></canvas>
-  <div class="grain"></div>
-  <div class="glow glow--tr"></div>
-  <div class="glow glow--ml"></div>
-  <div class="glow glow--br"></div>
+<body>
 
-  <main class="construction-shell">
-    <section class="construction-card">
-      <p class="construction-kicker hero-animate hero-animate-d1">Sound Journeys</p>
-      <h1 class="construction-title hero-animate hero-animate-d2">Coming Soon</h1>
-      <p class="construction-copy hero-animate hero-animate-d3">
-        The public website is still under construction while we refine the first release.
-      </p>
-      <p class="construction-copy construction-copy--secondary hero-animate hero-animate-d3">
-        A quieter launch page lives here for now while we prepare the full site.
-      </p>
-      <div class="construction-actions hero-animate hero-animate-d4">
-        <a href="mailto:info@soundjourneys.ch" class="btn btn--primary">Contact Sound Journeys</a>
+<!-- Atmosphere -->
+<canvas id="stars-canvas"></canvas>
+<div class="grain"></div>
+<div class="glow glow--tr"></div>
+<div class="glow glow--ml"></div>
+<div class="glow glow--br"></div>
+
+<!-- Navigation -->
+<nav class="site-nav" id="nav">
+  <a href="#" class="nav-logo">SOUND JOURNEYS</a>
+  <ul class="nav-links">
+    <li><a href="#concept">Concept</a></li>
+    <li><a href="#anatomy">The Arc</a></li>
+    <li><a href="#upcoming">Journeys</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#loop" class="btn btn--small btn--primary">Stay in the Loop</a></li>
+  </ul>
+  <div class="nav-burger" id="burger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#concept" onclick="closeMenu()">Concept</a>
+  <a href="#anatomy" onclick="closeMenu()">The Arc</a>
+  <a href="#upcoming" onclick="closeMenu()">Journeys</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#loop" onclick="closeMenu()">Stay in the Loop</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="section section--hero">
+
+  <!-- Layered atmospheric pressure zones -->
+  <div class="hero-glow hero__orb"></div>
+  <div class="hero__halo hero__halo--primary"></div>
+  <div class="hero__halo hero__halo--secondary"></div>
+
+  <div class="hero__inner">
+    <p class="hero-animate hero-animate-d1 hero__eyebrow">Zurich</p>
+
+    <h1 class="hero-animate hero-animate-d2 hero__title">
+      Enter a Curated<br />World of <span class="hero__title-accent">Sound</span>
+    </h1>
+
+    <p class="hero-animate hero-animate-d3 hero__copy">
+      Deep listening shaped with care, contrast, and emotional range — immersive, inward-facing, and carefully held.
+    </p>
+
+    <div class="hero-animate hero-animate-d4 hero__ctas">
+      <a href="#upcoming" class="btn btn--primary">See Upcoming Journeys</a>
+      <a href="#concept" class="btn btn--ghost">Our Concept</a>
+    </div>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="hero-animate hero-animate-d4 scroll-cue">
+    <span class="scroll-cue__label">Scroll</span>
+    <svg class="scroll-cue__icon" width="14" height="24" viewBox="0 0 14 24" fill="none">
+      <rect x="1" y="1" width="12" height="22" rx="6" stroke="#ede8df" stroke-width="1"/>
+      <circle cx="7" cy="7" r="2" fill="#ede8df">
+        <animate attributeName="cy" values="7;15;7" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ CONCEPT ============ -->
+<section id="concept" class="section section--prose">
+  <div class="reveal section-header">
+    <p class="eyebrow">Our Concept</p>
+    <h2 class="section-title">
+      Deep Listening,<br class="hidden sm:inline" /> Carefully Composed
+    </h2>
+  </div>
+
+  <div class="reveal reveal-d1 concept__intro">
+    <p class="concept__p concept__p--last">
+      A Sound Journey is a carefully shaped listening experience — continuous music played through a high-quality system in an intimate space, following an arc composed with intention.
+    </p>
+  </div>
+
+  <div id="expect" class="expect-list">
+    <div class="expect-item reveal reveal-d1">
+      <span class="expect-item__icon" aria-hidden="true">☁️</span>
+      <div class="expect-item__body">
+        <h4 class="expect-item__title">Lie Down and Listen</h4>
+        <p class="expect-item__copy">Most journeys happen with everyone resting on mattresses, cushions, and blankets in a carefully prepared room. The body stays still so attention can go inward.</p>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <script src="app.js"></script>
+    <div class="expect-item reveal reveal-d2">
+      <span class="expect-item__icon" aria-hidden="true">⏳</span>
+      <div class="expect-item__body">
+        <h4 class="expect-item__title">90 to 120 Minutes</h4>
+        <p class="expect-item__copy">The music is played as one continuous arc, usually followed by a short silent integration moment before people head back into the world.</p>
+      </div>
+    </div>
+
+    <div class="expect-item reveal reveal-d3">
+      <span class="expect-item__icon" aria-hidden="true">🫴</span>
+      <div class="expect-item__body">
+        <h4 class="expect-item__title">Held, Not Guided</h4>
+        <p class="expect-item__copy">There is no spoken guidance once the journey begins. No instructions, no performance, no pressure to respond in any particular way.</p>
+      </div>
+    </div>
+
+    <div class="expect-item reveal reveal-d4">
+      <span class="expect-item__icon" aria-hidden="true">🫶</span>
+      <div class="expect-item__body">
+        <h4 class="expect-item__title">Your Autonomy Stays With You</h4>
+        <p class="expect-item__copy">You can adjust your position, open your eyes, step out for a moment, or simply listen quietly. You are always free to regulate your own experience.</p>
+      </div>
+    </div>
+
+    <div class="expect-item reveal reveal-d5">
+      <span class="expect-item__icon" aria-hidden="true">🌊</span>
+      <div class="expect-item__body">
+        <h4 class="expect-item__title">Intensity Can Vary</h4>
+        <p class="expect-item__copy">Some parts may feel warm and spacious. Others may feel sharper, weirder, or more emotionally charged. That range is part of the form.</p>
+      </div>
+    </div>
+
+    <div class="expect-item reveal reveal-d6">
+      <span class="expect-item__icon" aria-hidden="true">😌</span>
+      <div class="expect-item__body">
+        <h4 class="expect-item__title">Phones Away, Attention On</h4>
+        <p class="expect-item__copy">The space works best when distractions drop away. We ask people to arrive settled, silence their phones, and give the journey their full attention.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal reveal-d3 concept__aside">
+    <p class="concept__aside-text">
+      Not a concert. Not therapy. Not a guided meditation.<br />
+      A carefully held listening container with atmosphere, contrast, and a distinctly artistic arc.
+    </p>
+  </div>
+</section>
+
+
+<!-- ============ ANATOMY ============ -->
+<section id="anatomy" class="section section--wide">
+  <div class="reveal section-header">
+    <p class="eyebrow">Anatomy of a Sound Journey</p>
+    <h2 class="section-title">
+      Not a Straight Line.<br />A Shaped Arc.
+    </h2>
+    <p class="section-intro">
+      A Sound Journey is not one steady build from calm to climax. It moves in waves — attention gathers, contrast opens, intensity rises and turns, and the landing is given time. The exact route changes from one journey to another, but the logic is always shaped with intention.
+    </p>
+  </div>
+
+  <!-- Signature Arc Visualization -->
+  <div class="reveal reveal-d1 anatomy__diagram">
+    <svg id="anatomySvg" class="anatomy__svg" viewBox="0 0 900 260">
+      <defs>
+        <linearGradient id="arcGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#708ea8" stop-opacity="0.55"/>
+          <stop offset="25%"  stop-color="#9589c4" stop-opacity="0.85"/>
+          <stop offset="55%"  stop-color="#c4a46c" stop-opacity="0.95"/>
+          <stop offset="100%" stop-color="#c98b6a" stop-opacity="0.9"/>
+        </linearGradient>
+        <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#9589c4" stop-opacity="0.14"/>
+          <stop offset="100%" stop-color="#9589c4" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="haloArrival" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#708ea8" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#708ea8" stop-opacity="0.05"/>
+          <stop offset="100%" stop-color="#708ea8" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="haloDeepening" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#9589c4" stop-opacity="0.55"/>
+          <stop offset="70%" stop-color="#9589c4" stop-opacity="0.05"/>
+          <stop offset="100%" stop-color="#9589c4" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="haloPeaks" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#c4a46c" stop-opacity="0.65"/>
+          <stop offset="70%" stop-color="#c4a46c" stop-opacity="0.06"/>
+          <stop offset="100%" stop-color="#c4a46c" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="haloLanding" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#c98b6a" stop-opacity="0.5"/>
+          <stop offset="70%" stop-color="#c98b6a" stop-opacity="0.05"/>
+          <stop offset="100%" stop-color="#c98b6a" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Baseline only -->
+      <line x1="50" y1="220" x2="850" y2="220" stroke="rgba(237,232,223,0.06)" stroke-width="1"/>
+
+      <!-- Phase halos — hidden by default, revealed on hover/focus -->
+      <circle class="anatomy-halo" data-phase="01" cx="100" cy="215" r="36" fill="url(#haloArrival)"/>
+      <circle class="anatomy-halo" data-phase="02" cx="330" cy="105" r="40" fill="url(#haloDeepening)"/>
+      <circle class="anatomy-halo" data-phase="03" cx="600" cy="45"  r="52" fill="url(#haloPeaks)"/>
+      <circle class="anatomy-halo" data-phase="04" cx="800" cy="191" r="42" fill="url(#haloLanding)"/>
+
+      <!-- Fill -->
+      <path class="anatomy-fill-path" d="M50,220 C120,218 150,200 200,180 C250,158 280,130 330,105 C370,84 400,65 440,50 C470,40 500,55 530,75 C550,88 570,65 600,45 C630,30 660,55 690,90 C720,120 750,155 790,185 C820,205 840,218 850,220 Z" fill="url(#fillGrad)"/>
+
+      <!-- Soft shadow line (adds body under the main curve) -->
+      <path class="anatomy-line anatomy-line--shadow" d="M50,220 C120,218 150,200 200,180 C250,158 280,130 330,105 C370,84 400,65 440,50 C470,40 500,55 530,75 C550,88 570,65 600,45 C630,30 660,55 690,90 C720,120 750,155 790,185 C820,205 840,218 850,220" fill="none" stroke="rgba(149,137,196,0.22)" stroke-width="8" stroke-linecap="round"/>
+
+      <!-- Main arc -->
+      <path class="anatomy-line" id="anatomyPath" d="M50,220 C120,218 150,200 200,180 C250,158 280,130 330,105 C370,84 400,65 440,50 C470,40 500,55 530,75 C550,88 570,65 600,45 C630,30 660,55 690,90 C720,120 750,155 790,185 C820,205 840,218 850,220" fill="none" stroke="url(#arcGrad)" stroke-width="2.5" stroke-linecap="round"/>
+
+      <!-- Phase markers — colour-coded per phase, hoverable -->
+      <g class="anatomy-dot" data-phase="01">
+        <circle class="anatomy-dot__hit" cx="100" cy="215" r="18" fill="transparent"/>
+        <circle class="anatomy-dot__core" cx="100" cy="215" r="4" fill="#708ea8"/>
+      </g>
+      <g class="anatomy-dot" data-phase="02">
+        <circle class="anatomy-dot__hit" cx="330" cy="105" r="18" fill="transparent"/>
+        <circle class="anatomy-dot__core" cx="330" cy="105" r="4" fill="#9589c4"/>
+      </g>
+      <g class="anatomy-dot" data-phase="03">
+        <circle class="anatomy-dot__hit" cx="600" cy="45" r="18" fill="transparent"/>
+        <circle class="anatomy-dot__core" cx="600" cy="45" r="4.5" fill="#c4a46c"/>
+      </g>
+      <g class="anatomy-dot" data-phase="04">
+        <circle class="anatomy-dot__hit" cx="800" cy="193" r="18" fill="transparent"/>
+        <circle class="anatomy-dot__core" cx="800" cy="193" r="4" fill="#c98b6a"/>
+      </g>
+
+      <!-- Phase labels -->
+      <text x="80"  y="248" fill="#6a6560" font-size="10" font-family="DM Sans" letter-spacing="0.08em">01 ARRIVAL</text>
+      <text x="300" y="248" fill="#6a6560" font-size="10" font-family="DM Sans" letter-spacing="0.08em">02 DEEPENING</text>
+      <text x="480" y="248" fill="#6a6560" font-size="10" font-family="DM Sans" letter-spacing="0.08em">03 PEAKS &amp; TURNS</text>
+      <text x="770" y="248" fill="#6a6560" font-size="10" font-family="DM Sans" letter-spacing="0.08em">04 LANDING</text>
+    </svg>
+  </div>
+
+  <!-- Phase Cards -->
+  <div class="anatomy__phases">
+    <div class="card reveal reveal-d2 anatomy-phase phase-card phase-card--arrival" data-phase="01">
+      <p class="phase-card__number">01</p>
+      <h4 class="phase-card__title">Arrival</h4>
+      <p class="phase-card__copy">The room settles. Attention narrows. The music creates orientation, trust, and the first sense of entering a distinct atmosphere.</p>
+    </div>
+    <div class="card reveal reveal-d3 anatomy-phase phase-card phase-card--deepening" data-phase="02">
+      <p class="phase-card__number">02</p>
+      <h4 class="phase-card__title">Deepening</h4>
+      <p class="phase-card__copy">Layers start to accumulate. Contrast becomes clearer. What begins as spacious or subtle can start to pull more strongly, emotionally or physically.</p>
+    </div>
+    <div class="card reveal reveal-d4 anatomy-phase phase-card phase-card--peaks" data-phase="03">
+      <p class="phase-card__number">03</p>
+      <h4 class="phase-card__title">Peaks &amp; Turns</h4>
+      <p class="phase-card__copy">Intensity does not arrive as one single climax. It may crest more than once, shifting between pressure, tenderness, friction, and release.</p>
+    </div>
+    <div class="card reveal reveal-d5 anatomy-phase phase-card phase-card--landing" data-phase="04">
+      <p class="phase-card__number">04</p>
+      <h4 class="phase-card__title">Landing</h4>
+      <p class="phase-card__copy">The ending is not abrupt. It widens, softens, and gives the body and mind time to return — without losing the charge of what just happened.</p>
+    </div>
+  </div>
+
+  <p class="reveal reveal-d6 anatomy__disclaimer">
+    This is a general map, not a fixed recipe — each journey has its own profile and personality, sometimes a single long wave, sometimes several.
+  </p>
+</section>
+
+
+<!-- ============ UPCOMING ============ -->
+<section id="upcoming" class="section section--wide">
+  <div class="reveal section-header">
+    <p class="eyebrow">Upcoming Journeys</p>
+    <h2 class="section-title">
+      What’s Coming Next
+    </h2>
+    <p class="section-intro">
+      Each Sound Journey carries its own atmosphere, arc, and emotional charge. Browse the next dates and choose the one that feels right for you.
+    </p>
+  </div>
+
+  <div class="journeys">
+
+    <article class="journey-card journey-card--featured reveal reveal-d1">
+      <div class="journey-card__media">
+        <div class="journey-cover journey-cover--bloomwave" aria-hidden="true">
+          <div class="journey-cover__bloom"></div>
+          <div class="journey-cover__bloom journey-cover__bloom--alt"></div>
+          <div class="journey-cover__grain"></div>
+          <span class="journey-cover__mark">Bloomwave</span>
+        </div>
+      </div>
+
+      <div class="journey-card__body">
+        <p class="journey-card__meta">
+          <span class="journey-card__date">SUN 3 MAY 2026</span>
+          <span class="journey-card__dot">·</span>
+          <span class="journey-card__time">19:30 – 22:30</span>
+          <span class="journey-card__dot">·</span>
+          <span class="journey-card__venue">Zurich</span>
+        </p>
+
+        <h3 class="journey-card__title">Bloomwave</h3>
+
+        <p class="journey-card__teaser">
+          A warmer, more luminous journey shaped through bloom, lift, and gentle momentum — spacious in its opening, fuller as it unfolds.
+        </p>
+
+        <div class="journey-card__tags">
+          <span class="tag">warm</span>
+          <span class="tag">luminous</span>
+          <span class="tag">mid-intensity</span>
+          <span class="tag">90 min</span>
+        </div>
+
+        <div class="journey-card__footer">
+          <span class="avail"><span class="avail__dot avail__dot--open"></span> Limited places</span>
+          <a href="https://eventfrog.ch/en/p/concerts/electro/immersive-sound-journey-7450581201671174771.html" target="_blank" rel="noopener" class="btn btn--primary">
+            Reserve a Spot
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section section--prose">
+  <div class="reveal section-header">
+    <p class="eyebrow">About</p>
+    <h2 class="section-title">
+      Held by Two Complementary Roles
+    </h2>
+  </div>
+
+  <div class="reveal reveal-d1 about__quote about__quote--above">
+    <p class="about__quote-text">
+      Two people, one project — held between them.
+    </p>
+  </div>
+
+  <div class="about__team">
+    <div class="card team-card reveal reveal-d2">
+      <div class="team-card__avatar">
+        <span class="team-card__initials">PA</span>
+      </div>
+      <h4 class="team-card__name">PA / Baribahl</h4>
+      <p class="team-card__role">Artist and musical direction</p>
+      <p class="team-card__bio">
+        PA is the artist behind Sound Journeys. He selects the music, sequences the arc, and plays every journey from behind the decks. He shapes the journey's overall direction.
+      </p>
+    </div>
+    <div class="card team-card reveal reveal-d3">
+      <div class="team-card__avatar team-card__avatar--cool">
+        <span class="team-card__initials team-card__initials--cool">T</span>
+      </div>
+      <h4 class="team-card__name">Tobias</h4>
+      <p class="team-card__role team-card__role--cool">Space, logistics, and artistic sounding-board</p>
+      <p class="team-card__bio">
+        Tobias focuses on everything around the music: the room, the setup, the flow of the evening, the website. He is also a close thinking partner on artistic direction.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ STAY IN THE LOOP ============ -->
+<section id="loop" class="section section--compact section--loop">
+  <div class="reveal">
+    <p class="eyebrow">Stay in the Loop</p>
+    <h2 class="section-title section-title--sm">
+      Want to know about future events?
+    </h2>
+    <p class="loop__copy">
+      Telegram is the best place to catch new dates, future announcements, and the next journeys as they take shape. If you prefer, you can also stay in the loop by email.
+    </p>
+
+    <div class="loop__primary">
+      <a class="btn btn--primary loop__telegram" href="https://t.me/soundjourneys" target="_blank" rel="noopener">
+        <span class="loop__telegram-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.642-.204-.657-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.939z"/>
+          </svg>
+        </span>
+        Join on Telegram
+        <span class="loop__telegram-handle">@soundjourneys</span>
+      </a>
+    </div>
+
+    <p class="loop__or"><span class="loop__or-line"></span><span class="loop__or-text">or stay updated by email</span><span class="loop__or-line"></span></p>
+
+    <form class="loop__form" onsubmit="handleSubscribe(event)" novalidate>
+      <input type="email" class="input input--flex-fill" placeholder="Your email address" required />
+      <button type="submit" class="btn btn--ghost btn--submit">Stay Updated</button>
+    </form>
+    <p class="loop__status" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <p class="site-footer__brand">SOUND JOURNEYS</p>
+  <p class="site-footer__contact">Zurich · <a href="mailto:info@soundjourneys.ch" class="site-footer__link">info@soundjourneys.ch</a></p>
+  <p class="site-footer__copy">© 2026 Sound Journeys. All rights reserved.</p>
+</footer>
+
+
+<!-- ============ JS ============ -->
+<script src="app.js"></script>
+
 </body>
 </html>
