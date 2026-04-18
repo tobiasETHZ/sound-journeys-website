@@ -187,10 +187,6 @@
                    rgba(var(--palette-dusty-rgb),    0.08) 0%,
                    rgba(var(--palette-dusty-rgb),    0.02) 40%,
                    transparent 72%);
-  --glow-hero-vignette: radial-gradient(ellipse at 50% 48%,
-                   transparent 0%,
-                   transparent 45%,
-                   rgba(var(--palette-midnight-rgb), 0.55) 100%);
 
   --divider-line: linear-gradient(90deg, transparent,
                    rgba(var(--palette-lavender-rgb), 0.3), transparent);

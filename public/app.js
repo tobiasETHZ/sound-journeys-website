@@ -88,7 +88,6 @@ if (anatomySvg) {
         anatomySvg.querySelectorAll('.anatomy-line').forEach(l => l.classList.add('drawn'));
         const fill = anatomySvg.querySelector('.anatomy-fill-path');
         if (fill) fill.classList.add('drawn');
-        anatomySvg.querySelectorAll('.anatomy-halo').forEach(h => h.classList.add('visible'));
         document.querySelectorAll('.anatomy-phase').forEach((card, i) => {
           setTimeout(() => card.classList.add('visible'), 600 + i * 180);
         });
@@ -98,6 +97,34 @@ if (anatomySvg) {
   }, { threshold: 0.25 });
   arcObs.observe(anatomySvg);
 }
+
+// ---- Anatomy phase hover linking (dots ⇄ cards) ----
+(function initAnatomyHoverLink() {
+  const dots = document.querySelectorAll('.anatomy-dot[data-phase]');
+  const cards = document.querySelectorAll('.anatomy-phase[data-phase]');
+  const halos = document.querySelectorAll('.anatomy-halo[data-phase]');
+  if (!dots.length && !cards.length) return;
+
+  const setActive = (phase, isActive) => {
+    if (!phase) return;
+    document
+      .querySelectorAll(`[data-phase="${phase}"]`)
+      .forEach(el => el.classList.toggle('is-active', isActive));
+  };
+
+  const bind = (el) => {
+    const phase = el.getAttribute('data-phase');
+    if (!phase) return;
+    el.addEventListener('mouseenter', () => setActive(phase, true));
+    el.addEventListener('mouseleave', () => setActive(phase, false));
+    el.addEventListener('focusin', () => setActive(phase, true));
+    el.addEventListener('focusout', () => setActive(phase, false));
+  };
+
+  dots.forEach(bind);
+  cards.forEach(bind);
+  halos.forEach(bind);
+})();
 
 
 // ---- Newsletter Subscribe ----
