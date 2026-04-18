@@ -16,9 +16,8 @@ named anchor on that one page — there are no separate routed pages in
 v1. Keeping it mono-page is intentional: the experience is meant to be
 read as one arc, mirroring the shape of a Sound Journey itself.
 
-A temporary `/` "coming soon" landing currently fronts the real site,
-which lives at `/preview/` within the build folder. This is scaffolding,
-not architecture —  when the site goes public, the preview content becomes `/`.
+A temporary "coming soon" landing currently fronts the real site,
+The real site lives in the `preview/` subfolder.
 
 
 ## Section order (top to bottom)
@@ -31,15 +30,14 @@ not architecture —  when the site goes public, the preview content becomes `/`
 | D | Upcoming journeys       | `#upcoming` | Journeys           |
 | E | What to expect          | `#expect`   | What to Expect     |
 | F | About us                | `#about`    | —                  |
-| G | Private bookings        | `#private`  | Private            |
+| G | Private bookings        | `#private`  | Private Bookings   |
 | H | Stay in the loop        | `#loop`     | Stay in the Loop * |
 
 \* Rendered as a primary-button link in the nav, not a plain text link.
 
 ## Section purposes
 
-Each section's actual copy lives in `content/home.md`. This file
-describes only what each section is *for*.
+This file  describes only what each section is *for*. The actual content was added manually.
 
 ### Hero
 Sets the atmospheric tone and communicates the core offering.
@@ -55,8 +53,7 @@ Key section. Describes the shape of a journey. See component rules
 below.
 
 ### Upcoming journeys
-Event cards sourced from `config/events.yml`. See component rules
-below.
+Event cards for upcoming events. 
 
 ### What to expect / Entering the journey
 Bridges artistic framing and practical clarity. Communicates
@@ -144,7 +141,7 @@ simple ramp.
    "Release" descent, so the wave-based structure (see decisions.md)
    is legible at a glance without needing the expanded view.
 
-2. **Expanded anatomy** — optional deeper layer, revealed on
+2. **Expanded anatomy** — IGNORE THIS FOR NOW - optional deeper layer, revealed on
    interaction (hover, click, or expand). May include:
    - Arriving / settling / orientation
    - Grounding / attunement / soft opening
