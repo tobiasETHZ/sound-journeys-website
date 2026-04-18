@@ -1,0 +1,276 @@
+/* =========================================================================
+   Sound Journeys — Design Tokens
+   -------------------------------------------------------------------------
+   All spacing, typography, colour, radius, shadow, timing, and z-index
+   values used across the site are defined here. Component CSS must only
+   reference these tokens (via var(...)) — never hardcode raw values.
+   If a needed token is missing, add it here with a semantic name.
+   ========================================================================= */
+
+:root {
+  /* ---------- Palette (raw) -------------------------------------------- */
+  --palette-midnight: #090d1a;
+  --palette-deep:     #0f1424;
+  --palette-surface:  #171d30;
+  --palette-bone:     #ede8df;
+  --palette-stone:    #9e978b;
+  --palette-muted:    #6a6560;
+  --palette-lavender: #9589c4;
+  --palette-gold:     #c4a46c;
+  --palette-dusty:    #708ea8;
+  --palette-success:  #6abf6a;
+  --palette-black:    #000000;
+
+  /* RGB channels for alpha composition via rgba(var(--x-rgb), a). */
+  --palette-midnight-rgb: 9, 13, 26;
+  --palette-deep-rgb:     15, 20, 36;
+  --palette-surface-rgb:  23, 29, 48;
+  --palette-bone-rgb:     237, 232, 223;
+  --palette-stone-rgb:    158, 151, 139;
+  --palette-muted-rgb:    106, 101, 96;
+  --palette-lavender-rgb: 149, 137, 196;
+  --palette-gold-rgb:     196, 164, 108;
+  --palette-dusty-rgb:    112, 142, 168;
+  --palette-success-rgb:  106, 191, 106;
+  --palette-black-rgb:    0, 0, 0;
+
+  /* ---------- Semantic colour ------------------------------------------ */
+  --color-bg:             var(--palette-midnight);
+  --color-surface:        var(--palette-surface);
+  --color-text-primary:   var(--palette-bone);
+  --color-text-secondary: var(--palette-stone);
+  --color-text-muted:     var(--palette-muted);
+
+  --color-accent-primary: var(--palette-lavender);
+  --color-accent-warm:    var(--palette-gold);
+  --color-accent-cool:    var(--palette-dusty);
+  --color-accent-success: var(--palette-success);
+
+  /* Very low-contrast muted (e.g. copyright line) */
+  --color-text-faint: rgba(var(--palette-muted-rgb), 0.5);
+
+  /* ---------- Surfaces (glass / overlay) ------------------------------- */
+  --surface-glass-subtle:   rgba(var(--palette-surface-rgb), 0.25);
+  --surface-glass-soft:     rgba(var(--palette-surface-rgb), 0.45);
+  --surface-glass:          rgba(var(--palette-surface-rgb), 0.55);
+  --surface-glass-strong:   rgba(var(--palette-surface-rgb), 0.58);
+  --surface-glass-solid:    rgba(var(--palette-surface-rgb), 0.74);
+  --surface-glass-opaque:   rgba(var(--palette-surface-rgb), 0.92);
+
+  --surface-nav:            rgba(var(--palette-midnight-rgb), 0.7);
+  --surface-nav-scrolled:   rgba(var(--palette-midnight-rgb), 0.92);
+  --surface-mobile-menu:    rgba(var(--palette-midnight-rgb), 0.96);
+
+  /* ---------- Borders / dividers --------------------------------------- */
+  --border-hairline:     rgba(var(--palette-bone-rgb), 0.04);
+  --border-subtle:       rgba(var(--palette-bone-rgb), 0.05);
+  --border-soft:         rgba(var(--palette-bone-rgb), 0.06);
+  --border-default:      rgba(var(--palette-bone-rgb), 0.08);
+  --border-strong:       rgba(var(--palette-bone-rgb), 0.12);
+  --border-focus:        rgba(var(--palette-bone-rgb), 0.28);
+
+  --border-accent-soft:    rgba(var(--palette-lavender-rgb), 0.18);
+  --border-accent:         rgba(var(--palette-lavender-rgb), 0.28);
+  --border-accent-focus:   rgba(var(--palette-lavender-rgb), 0.35);
+  --border-accent-strong:  rgba(var(--palette-lavender-rgb), 0.5);
+  --border-warm-soft:      rgba(var(--palette-gold-rgb), 0.1);
+  --border-cool-soft:      rgba(var(--palette-dusty-rgb), 0.2);
+
+  /* ---------- Accent fills (tints / washes) ---------------------------- */
+  --accent-primary-wash:       rgba(var(--palette-lavender-rgb), 0.05);
+  --accent-primary-tint:       rgba(var(--palette-lavender-rgb), 0.1);
+  --accent-primary-fill:       rgba(var(--palette-lavender-rgb), 0.12);
+  --accent-primary-fill-hover: rgba(var(--palette-lavender-rgb), 0.22);
+  --accent-primary-scroll:     rgba(var(--palette-lavender-rgb), 0.18);
+  --accent-primary-scroll-hover: rgba(var(--palette-lavender-rgb), 0.3);
+  --accent-primary-divider:    rgba(var(--palette-lavender-rgb), 0.3);
+
+  --accent-cool-tint:          rgba(var(--palette-dusty-rgb), 0.1);
+  --accent-warm-wash:          rgba(var(--palette-gold-rgb), 0.04);
+
+  /* ---------- Shadows / glows ------------------------------------------ */
+  --shadow-card-hover:  0 12px 48px rgba(var(--palette-black-rgb), 0.25);
+  --shadow-elevated:    0 24px 80px rgba(var(--palette-black-rgb), 0.28);
+  --shadow-input-focus: 0 0 24px rgba(var(--palette-lavender-rgb), 0.05);
+  --shadow-dot-success: 0 0 8px rgba(var(--palette-success-rgb), 0.4);
+  --shadow-dot-warm:    0 0 8px rgba(var(--palette-gold-rgb), 0.4);
+
+  /* Atmospheric glow layers (radial backgrounds) */
+  --glow-cool:    radial-gradient(circle, rgba(var(--palette-dusty-rgb),    0.07), transparent 70%);
+  --glow-primary: radial-gradient(circle, rgba(var(--palette-lavender-rgb), 0.05), transparent 70%);
+  --glow-warm:    radial-gradient(circle, rgba(var(--palette-gold-rgb),     0.04), transparent 70%);
+  --glow-hero:    radial-gradient(circle,
+                    rgba(var(--palette-lavender-rgb), 0.06) 0%,
+                    rgba(var(--palette-dusty-rgb),    0.03) 40%,
+                    transparent 70%);
+
+  --divider-line: linear-gradient(90deg, transparent, var(--accent-primary-divider), transparent);
+
+  /* ---------- Typography ----------------------------------------------- */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans:  'DM Sans', sans-serif;
+
+  /* Weights */
+  --font-weight-light:    300;
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+
+  /* Sizes — small scale (rem) */
+  --text-3xs: 0.6rem;
+  --text-2xs: 0.65rem;
+  --text-xs:  0.7rem;
+  --text-xs-plus: 0.72rem;
+  --text-sm:  0.78rem;
+  --text-sm-plus: 0.82rem;
+  --text-base: 0.85rem;
+  --text-md:  0.88rem;
+  --text-md-plus: 0.92rem;
+  --text-lg:  0.95rem;
+  --text-lg-plus: 1rem;
+  --text-xl:  1.05rem;
+  --text-xl-plus: 1.1rem;
+  --text-2xl: 1.15rem;
+  --text-3xl: 1.3rem;
+  --text-4xl: 1.4rem;
+  --text-5xl: 1.5rem;
+
+  /* Display sizes (responsive, via clamp) */
+  --text-display-sm: clamp(1.6rem, 3.5vw, 2.2rem);
+  --text-display-md: clamp(1.8rem, 4vw,   2.6rem);
+  --text-display-lg: clamp(2.6rem, 6vw,   4.4rem);
+  --text-display-xl: clamp(3rem,   8vw,   5.2rem);
+  --text-display-xl-mobile: clamp(2.5rem, 14vw, 4rem);
+
+  /* Line heights */
+  --leading-tight:  0.95;
+  --leading-snug:   1.12;
+  --leading-normal: 1.2;
+  --leading-heading: 1.25;
+  --leading-event:  1.3;
+  --leading-relaxed: 1.6;
+  --leading-body:   1.7;
+  --leading-loose:  1.8;
+  --leading-airy:   1.85;
+
+  /* Letter spacing */
+  --tracking-tighter: -0.02em;
+  --tracking-tight:   -0.01em;
+  --tracking-normal:   0.02em;
+  --tracking-wide:     0.03em;
+  --tracking-wider:    0.04em;
+  --tracking-widest:   0.05em;
+  --tracking-ultra:    0.06em;
+  --tracking-ultra-plus: 0.08em;
+  --tracking-caps:     0.1em;
+  --tracking-eyebrow:  0.16em;
+  --tracking-eyebrow-lg: 0.18em;
+
+  /* ---------- Spacing scale (multiples of 4px, plus named half-steps) -- */
+  --space-0-5:  2px;
+  --space-1:    4px;
+  --space-1-5:  6px;
+  --space-2:    8px;
+  --space-2-5:  10px;
+  --space-3:    12px;
+  --space-3-5:  14px;
+  --space-4:    16px;
+  --space-4-5:  18px;
+  --space-5:    20px;
+  --space-5-5:  22px;
+  --space-6:    24px;
+  --space-6-5:  26px;
+  --space-7:    28px;
+  --space-8:    32px;
+  --space-9:    36px;
+  --space-10:   40px;
+  --space-11:   44px;
+  --space-12:   48px;
+  --space-14:   56px;
+  --space-18:   72px;
+  --space-20:   80px;
+  --space-25:   100px;
+  --space-30:   120px;
+
+  /* ---------- Section / layout sizes ----------------------------------- */
+  --layout-max-compact: 560px;
+  --layout-max-narrow:  620px;
+  --layout-max-reading: 720px;
+  --layout-max-prose:   840px;
+  --layout-max-wide:    960px;
+
+  --layout-gutter: var(--space-6);
+  --layout-gutter-tight: var(--space-5);
+
+  --nav-height: 72px;
+  --scroll-padding-top: 80px;
+
+  /* ---------- Radii ---------------------------------------------------- */
+  --radius-xs:    3px;
+  --radius-sm:    6px;
+  --radius-md:    10px;
+  --radius-lg:    14px;
+  --radius-xl:    24px;
+  --radius-pill:  100px;
+  --radius-round: 999px;
+
+  /* ---------- Blur ----------------------------------------------------- */
+  --blur-card:       12px;
+  --blur-glass:      16px;
+  --blur-card-soft:  18px;
+  --blur-nav:        24px;
+  --blur-atmosphere: 100px;
+
+  /* ---------- Motion --------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-reveal:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  --duration-fast:   0.3s;
+  --duration-medium: 0.35s;
+  --duration-slow:   0.4s;
+  --duration-reveal: 0.5s;
+  --duration-glide:  0.75s;
+  --duration-hero:   1.2s;
+  --duration-arc-fill: 1.6s;
+  --duration-arc-line: 2.5s;
+  --duration-breathe:  5s;
+
+  /* Reveal stagger (used by .reveal-dN) */
+  --reveal-stagger: 0.08s;
+
+  /* ---------- Z-index layering ----------------------------------------- */
+  --z-atmosphere: 0;
+  --z-grain:      1;
+  --z-content:    2;
+  --z-mobile-menu: 49;
+  --z-nav:        50;
+  --z-badge:      55;
+
+  /* ---------- Opacity tokens ------------------------------------------ */
+  --opacity-grain: 0.03;
+  --opacity-phase-icon: 0.6;
+  --opacity-intensity: 0.55;
+  --opacity-intensity-hover: 0.85;
+  --opacity-glyph-subtle: 0.3;
+  --opacity-glyph-medium: 0.5;
+
+  /* ---------- Component-specific ---------------------------------------- */
+  --avatar-size: 72px;
+  --phase-dot-size: 6px;
+  --intensity-max-width: 220px;
+  --intensity-card-max-width: 200px;
+  --intensity-min-column: 180px;
+  --event-card-min-column: 260px;
+  --expect-icon-col: 32px;
+  --hero-orb-size: 480px;
+  --glow-tr-width: 600px;
+  --glow-tr-height: 500px;
+  --glow-ml-size: 500px;
+  --glow-br-size: 400px;
+  --scroll-cue-width: 14px;
+  --scroll-cue-height: 24px;
+
+  /* ---------- Breakpoints (reference; not usable inside @media) -------- */
+  --bp-md: 768px;
+  --bp-sm: 640px;
+}
