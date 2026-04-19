@@ -167,6 +167,8 @@
   --shadow-dot-success: 0 0 8px rgba(var(--palette-success-rgb),  0.4);
   --shadow-dot-warm:    0 0 8px rgba(var(--palette-gold-rgb),     0.4);
   --shadow-dot-accent:  0 0 8px rgba(var(--palette-lavender-rgb), 0.35);
+  --shadow-portrait:    0 16px 40px rgba(var(--palette-black-rgb), 0.35),
+                        inset 0 0 0 1px rgba(var(--palette-bone-rgb), 0.06);
 
   /* ---------- Atmospheric glows / dividers ---------------------------- */
   --glow-cool:   radial-gradient(circle,
@@ -190,17 +192,6 @@
 
   --divider-line: linear-gradient(90deg, transparent,
                    rgba(var(--palette-lavender-rgb), 0.3), transparent);
-
-  /* ---------- Journey cover (event art placeholder) ------------------- */
-  --journey-cover-bloomwave:
-    radial-gradient(120% 90% at 72% 28%,
-      rgba(var(--palette-gold-rgb),     0.55) 0%,
-      rgba(var(--palette-gold-rgb),     0.22) 28%,
-      rgba(var(--palette-lavender-rgb), 0.28) 55%,
-      rgba(var(--palette-surface-rgb),  0.95) 85%),
-    linear-gradient(160deg,
-      rgba(var(--palette-surface-rgb), 1) 0%,
-      rgba(var(--palette-midnight-rgb), 1) 100%);
 
   /* ---------- Typography — families ----------------------------------- */
   --font-family-heading: var(--family-serif);
@@ -296,6 +287,9 @@
   /* ---------- Navigation / scroll ------------------------------------- */
   --nav-height:        72px;
   --scroll-padding-top: 80px;
+
+  /* ---------- Component sizes ---------------------------------------- */
+  --size-team-avatar: clamp(8.5rem, 15vw, 10.5rem);  /* ~136–168px portrait */
 
   /* ---------- Effects — blur ------------------------------------------ */
   --blur-card:       12px;
