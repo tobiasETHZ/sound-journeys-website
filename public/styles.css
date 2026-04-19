@@ -1034,28 +1034,35 @@ textarea.input { resize: vertical; min-height: 120px; }
 }
 .loop__primary {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: var(--space-inline-md);
   margin-bottom: var(--space-stack-xl);
 }
-.loop__telegram {
+.loop__telegram,
+.loop__whatsapp {
   font-size: var(--font-size-body);
   padding: var(--space-input-y) var(--space-card);
   gap: var(--space-inline-md);
 }
-.loop__telegram-icon {
+.loop__telegram-icon,
+.loop__whatsapp-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 22px;
   height: 22px;
-  color: #229ED9;
 }
-.loop__telegram-icon svg {
+.loop__telegram-icon { color: #229ED9; }
+.loop__whatsapp-icon { color: #25D366; }
+.loop__telegram-icon svg,
+.loop__whatsapp-icon svg {
   width: 100%;
   height: 100%;
   display: block;
 }
-.loop__telegram-handle {
+.loop__telegram-handle,
+.loop__whatsapp-handle {
   color: var(--color-text-body);
   font-weight: var(--font-weight-body);
   letter-spacing: var(--tracking-wide);
