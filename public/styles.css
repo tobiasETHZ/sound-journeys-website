@@ -724,9 +724,7 @@ textarea.input { resize: vertical; min-height: 120px; }
   }
   .journey-card--featured .journey-card__media {
     order: 2;
-    aspect-ratio: auto;
-    height: 100%;
-    min-height: 420px;
+    aspect-ratio: 1 / 1;
   }
 }
 
