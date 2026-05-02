@@ -1303,7 +1303,7 @@ textarea.input { resize: vertical; min-height: 120px; }
 }
 
 .links-shell {
-  width: min(100%, 620px);
+  width: min(100%, 680px);
   padding: clamp(28px, 6vw, 48px);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xl);
@@ -1321,30 +1321,43 @@ textarea.input { resize: vertical; min-height: 120px; }
   animation: float-in var(--duration-hero) var(--ease-standard) both;
 }
 
-.links-logo {
+.links-brand {
   display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-stack-xs);
   margin-bottom: var(--space-stack-xl);
   color: var(--color-text-heading);
+  text-decoration: none;
+}
+
+.links-brand__name {
   font-size: var(--font-size-caption);
   font-weight: var(--font-weight-button);
   letter-spacing: var(--tracking-eyebrow);
-  text-decoration: none;
   text-transform: uppercase;
 }
 
-.links-logo:hover,
-.links-logo:focus-visible {
+.links-brand__location {
+  color: var(--color-text-body);
+  font-size: var(--font-size-meta);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.links-brand:hover,
+.links-brand:focus-visible {
   color: var(--color-accent-warm);
 }
 
-.links-logo:focus-visible {
+.links-brand:focus-visible {
   outline: 2px solid var(--border-focus);
   outline-offset: 4px;
   border-radius: var(--radius-sm);
 }
 
 .links-eyebrow {
-  margin-bottom: var(--space-stack-md);
+  margin-bottom: var(--space-stack-sm);
   color: var(--color-accent);
   font-size: var(--font-size-eyebrow);
   letter-spacing: var(--tracking-eyebrow);
@@ -1352,7 +1365,7 @@ textarea.input { resize: vertical; min-height: 120px; }
 }
 
 .links-title {
-  margin: 0 auto var(--space-stack-sm);
+  margin: 0 auto var(--space-stack-xs);
   color: var(--color-text-heading);
   font-family: var(--font-family-heading);
   font-size: clamp(2.1rem, 6vw, 3.45rem);
@@ -1366,7 +1379,8 @@ textarea.input { resize: vertical; min-height: 120px; }
   margin: 0 auto var(--space-stack-lg);
   color: var(--color-accent-warm);
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-caption);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-button);
   font-style: italic;
   line-height: var(--line-height-heading);
 }
@@ -1459,6 +1473,46 @@ textarea.input { resize: vertical; min-height: 120px; }
   border-radius: 16px;
 }
 
+.links-card__visual--website {
+  color: var(--color-accent);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--palette-lavender-rgb), 0.14),
+      rgba(var(--palette-lavender-rgb), 0.05)
+    );
+}
+
+.links-card__visual--telegram {
+  color: #229ED9;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(34, 158, 217, 0.14),
+      rgba(34, 158, 217, 0.05)
+    );
+}
+
+.links-card__visual--whatsapp {
+  color: #25D366;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(37, 211, 102, 0.14),
+      rgba(37, 211, 102, 0.05)
+    );
+}
+
+.links-card__visual--contact {
+  color: var(--color-accent-warm);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--palette-gold-rgb), 0.14),
+      rgba(var(--palette-gold-rgb), 0.05)
+    );
+}
+
 .links-card__image,
 .links-card__icon {
   display: block;
@@ -1473,7 +1527,7 @@ textarea.input { resize: vertical; min-height: 120px; }
 
 .links-card__icon {
   padding: 14px;
-  color: rgba(var(--palette-bone-rgb), 0.9);
+  color: currentColor;
 }
 
 .links-card__content {
@@ -1546,8 +1600,16 @@ textarea.input { resize: vertical; min-height: 120px; }
     border-radius: 20px;
   }
 
-  .links-logo {
+  .links-brand {
     margin-bottom: var(--space-stack-lg);
+  }
+
+  .links-brand__name {
+    font-size: var(--font-size-meta);
+  }
+
+  .links-brand__location {
+    font-size: 0.72rem;
   }
 
   .links-title {
@@ -1557,7 +1619,7 @@ textarea.input { resize: vertical; min-height: 120px; }
 
   .links-subtitle {
     margin-bottom: var(--space-stack-md);
-    font-size: var(--font-size-meta);
+    font-size: var(--font-size-caption);
   }
 
   .links-intro {
@@ -1599,5 +1661,36 @@ textarea.input { resize: vertical; min-height: 120px; }
   .links-card__arrow {
     animation: none;
     transition: none;
+  }
+}
+
+@media (min-width: 960px) {
+  .links-shell {
+    width: min(100%, 720px);
+    padding: clamp(36px, 4vw, 56px);
+  }
+
+  .links-title {
+    font-size: clamp(2.3rem, 4vw, 4rem);
+    max-width: 12ch;
+  }
+
+  .links-intro {
+    max-width: 52ch;
+  }
+
+  .links-card {
+    min-height: 84px;
+    padding: 18px 20px;
+  }
+
+  .links-card__visual--image {
+    width: 104px;
+    height: 104px;
+  }
+
+  .links-card__visual--icon {
+    width: 60px;
+    height: 60px;
   }
 }
